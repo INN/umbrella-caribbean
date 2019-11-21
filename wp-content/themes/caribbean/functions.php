@@ -1,9 +1,6 @@
 <?php
 define( 'SHOW_STICKY_NAV', false );
 define( 'SHOW_CATEGORY_RELATED_TOPICS', false );
-// Setup some contants we'll need in various places
-define( 'LARGO_EXT_DIR', dirname( __FILE__ ) );
-define( 'LARGO_EXT', __FILE__ );
 
 /**
  * Include theme files
