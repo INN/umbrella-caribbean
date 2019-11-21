@@ -5,6 +5,7 @@ wp-content/themes/twenty*
 data/*
 wp-scripts/*
 .yeopress
+wp-content/themes/caribbean/node_modules/*
 
 *~
 .DS_Store
