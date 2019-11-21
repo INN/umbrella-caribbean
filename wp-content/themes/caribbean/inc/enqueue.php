@@ -6,7 +6,7 @@
 function caribbean_enqueue_styles(){
 	wp_enqueue_style(
 		'typekit',
-		'https://use.typekit.net/xkz6lbv.css'
+		'https://use.typekit.net/rrf1wzf.css'
 	);
 	wp_enqueue_style(
 		'largo-child-styles',
