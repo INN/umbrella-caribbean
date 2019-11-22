@@ -16,3 +16,21 @@
 		}
 	}
 }
+
+.navbar .nav > li > a {
+	color: @grey1;
+	&:hover {
+		background-color: transparent;
+		color: @blue;
+	}
+}
+
+@media ( min-width: 769px ) {
+	.navbar .nav {
+		float: none;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		flex-wrap: nowrap;
+	}
+}
