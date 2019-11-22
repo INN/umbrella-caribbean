@@ -1,3 +1,9 @@
+@media ( max-width: 768px ) {
+	// override Largo
+	#site-header, #main-nav {
+		display: block;
+	}
+}
 #main-nav.navbar {
 	position: sticky;
 	top: 0;
@@ -5,10 +11,6 @@
 	background: @white;
 	border-top: 1px solid @grey3;
 	border-bottom: 4px solid @grey1;
-	@media ( max-width: 768px ) {
-		// override Largo
-		display: block;
-	}
 	.admin-bar & {
 		top: 32px;
 		@media ( max-width: 782px ) {

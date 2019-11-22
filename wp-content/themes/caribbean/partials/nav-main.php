@@ -4,6 +4,10 @@
  *
  * This is the primary navigation for all pages, and is modified from Largo's partials/nav-main.php
  *
+ * Differs in following ways:
+ * - output on all pages
+ * - removes .nav-shelf class
+ *
  * @see inc/navigation.php
  * @since Largo 0.6.4
  * @package Largo
@@ -25,8 +29,8 @@
 				 */
 				do_action( 'largo_before_main_nav_shelf' ); 
 			?>
-			
-			<div class="nav-shelf">
+
+			<div class="">
 				<ul class="nav">
 				
 				<?php
@@ -64,7 +68,7 @@
 					 *
 					 * @link https://codex.wordpress.org/Function_Reference/add_action
 					 * @since 0.5.5
-     			 	 */
+					 */
 					do_action( 'largo_after_main_nav_list_items' );
 				?>
 				</ul>
@@ -79,7 +83,7 @@
 				 *
 				 * @link https://codex.wordpress.org/Function_Reference/add_action
 				 * @since 0.5.5
-     			 */
+				 */
 				do_action( 'largo_after_main_nav_shelf' );
 			?>
 			
