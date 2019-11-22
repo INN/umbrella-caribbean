@@ -1,0 +1,18 @@
+#main-nav.navbar {
+	position: sticky;
+	top: 0;
+	z-index: 10; // makes background color work, also prevents z-conflict with widgets
+	background: @white;
+	border-top: 1px solid @grey3;
+	border-bottom: 4px solid @grey1;
+	@media ( max-width: 768px ) {
+		// override Largo
+		display: block;
+	}
+	.admin-bar & {
+		top: 32px;
+		@media ( max-width: 782px ) {
+			top: 46px;
+		}
+	}
+}
