@@ -17,6 +17,24 @@ Version:        1.0
 
 .social-media-icons {
     margin: 0;
+    &.circled-icons {
+        li {
+            span {
+                color: @teal;
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                border: 1px solid @teal;
+                text-align: center;
+                line-height: 34px;
+                vertical-align: middle;
+                &:hover {
+                    border: 1px solid @blue;
+                    color: @blue;
+                }
+            }
+        }
+    }
     li {
         display: inline-block;
         margin-bottom: 0;
@@ -30,15 +48,7 @@ Version:        1.0
             }
             span {
                 color: @teal;
-                width: 34px;
-                height: 34px;
-                border-radius: 50%;
-                border: 1px solid @teal;
-                text-align: center;
-                line-height: 34px;
-                vertical-align: middle;
                 &:hover {
-                    border: 1px solid @blue;
                     color: @blue;
                 }
             }
