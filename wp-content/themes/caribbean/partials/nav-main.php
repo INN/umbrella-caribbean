@@ -17,8 +17,7 @@
 <nav id="main-nav" class="navbar clearfix">
 	<div class="navbar-inner">
 		<div class="container">
-			
-			<?php 
+			<?php
 				/*
 				 * Before Main Nav Shelf
 				 *
@@ -32,49 +31,62 @@
 
 			<div class="">
 				<ul class="nav">
-				
-				<?php
-					/*
-					 * Before Main Nav List Items
-					 *
-					 * Use add_action( 'largo_before_main_nav_list_items', 'function_to_add');
-					 *
-					 * @link https://codex.wordpress.org/Function_Reference/add_action
-					 * @since 0.5.5
-					 */
-					do_action( 'largo_before_main_nav_list_items' );
-					
-					/*
-					 * Generate the Main Navigation shown mainly on homepages
-					 *
-					 * A Bootstrap Navbar is generated from a walker.
-					 *
-					 * @see inc/nav-menus.php
-					 */
-					$args = array(
-						'theme_location' => 'main-nav',
-						'depth' => 0,
-						'container' => false,
-						'items_wrap' => '%3$s',
-						'menu_class' => 'nav',
-						'walker' => new Bootstrap_Walker_Nav_Menu()
-					);
-					largo_nav_menu( $args );
-					
-					/*
-					 * After Main Nav List Items
-					 *
-					 * Use add_action( 'largo_after_main_nav_list_items', 'function_to_add');
-					 *
-					 * @link https://codex.wordpress.org/Function_Reference/add_action
-					 * @since 0.5.5
-					 */
-					do_action( 'largo_after_main_nav_list_items' );
-				?>
+					<?php
+						/*
+						 * Before Main Nav List Items
+						 *
+						 * Use add_action( 'largo_before_main_nav_list_items', 'function_to_add');
+						 *
+						 * @link https://codex.wordpress.org/Function_Reference/add_action
+						 * @since 0.5.5
+						 */
+						do_action( 'largo_before_main_nav_list_items' );
+
+						/*
+						 * Generate the Main Navigation shown mainly on homepages
+						 *
+						 * A Bootstrap Navbar is generated from a walker.
+						 *
+						 * @see inc/nav-menus.php
+						 */
+						$args = array(
+							'theme_location' => 'main-nav',
+							'depth' => 0,
+							'container' => false,
+							'items_wrap' => '%3$s',
+							'menu_class' => 'nav',
+							'walker' => new Bootstrap_Walker_Nav_Menu()
+						);
+						largo_nav_menu( $args );
+
+						/*
+						 * After Main Nav List Items
+						 *
+						 * Use add_action( 'largo_after_main_nav_list_items', 'function_to_add');
+						 *
+						 * @link https://codex.wordpress.org/Function_Reference/add_action
+						 * @since 0.5.5
+						 */
+						do_action( 'largo_after_main_nav_list_items' );
+					?>
+
+					<li class="toggle-nav-bar">
+						<!-- "hamburger" button (3 bars) to trigger off-canvas navigation -->
+						<a class="btn btn-navbar " title="<?php esc_attr_e('More', 'largo'); ?>">
+							<div class="bars">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</div>
+							<div class="menu-label">
+								<?php esc_html_e( 'Menu', 'caribbean' ); ?>
+							</div>
+						</a>
+					</li>
 				</ul>
 
 			</div>
-			
+
 			<?php 
 				/*
 				 * Before Main Nav Shelf
@@ -86,7 +98,7 @@
 				 */
 				do_action( 'largo_after_main_nav_shelf' );
 			?>
-			
+
 		</div>
 	</div>
 </nav>

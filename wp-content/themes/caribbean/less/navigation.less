@@ -5,6 +5,10 @@
 	}
 }
 #main-nav.navbar {
+	.nav {
+		padding: 10px 0;
+	}
+	text-transform: uppercase
 	position: sticky;
 	top: 0;
 	z-index: 10; // makes background color work, also prevents z-conflict with widgets
@@ -24,6 +28,31 @@
 	&:hover {
 		background-color: transparent;
 		color: @blue;
+	}
+}
+.toggle-nav-bar {
+	// normally hidden; shows when the js knows that there's an overflow
+	display: none;
+	float: left;
+	border-left: 1px solid @grey3;
+	.btn-navbar {
+		padding-top: 0;
+		padding-bottom: 0;;
+	}
+	// has to be more specific than Largo's .navbar .btn-navbar .icon-bar
+	li& .bars span.icon-bar {
+		background-color: @grey1;
+		margin: 0 auto;
+		height: 2px;
+		& + .icon-bar {
+			margin-top: 4px;
+		}
+	}
+	&:hover .icon-bar {
+		background-color: @blue;
+	}
+	.menu-label {
+		line-height: 1.6;
 	}
 }
 
