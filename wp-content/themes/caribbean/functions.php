@@ -1,6 +1,7 @@
 <?php
 define( 'SHOW_STICKY_NAV', false );
 define( 'SHOW_CATEGORY_RELATED_TOPICS', false );
+define( 'SHOW_GLOBAL_NAV', false );
 
 /**
  * Include theme files
