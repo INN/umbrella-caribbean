@@ -14,7 +14,7 @@
 	z-index: 10; // makes background color work, also prevents z-conflict with widgets
 	background: @white;
 	border-top: 1px solid @grey3;
-	border-bottom: 4px solid @grey1;
+	border-bottom: 4px solid @black;
 	.admin-bar & {
 		top: 32px;
 		@media ( max-width: 782px ) {
@@ -24,10 +24,10 @@
 }
 
 .navbar .nav > li > a {
-	color: @grey1;
+	color: @black;
 	&:hover {
 		background-color: transparent;
-		color: @blue;
+		color: @teal;
 	}
 }
 .toggle-nav-bar {
@@ -41,7 +41,7 @@
 	}
 	// has to be more specific than Largo's .navbar .btn-navbar .icon-bar
 	li& .bars span.icon-bar {
-		background-color: @grey1;
+		background-color: @black;
 		margin: 0 auto;
 		height: 2px;
 		& + .icon-bar {
@@ -49,7 +49,7 @@
 		}
 	}
 	&:hover .icon-bar {
-		background-color: @blue;
+		background-color: @teal;
 	}
 	.menu-label {
 		line-height: 1.6;
