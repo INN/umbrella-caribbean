@@ -29,7 +29,6 @@
     this.toggleTouchClass();
 
     // Stick navigation
-    this.stickyNavWrapper = $('.sticky-nav-wrapper');
     this.mainEl = $('#main');
     this.mainNavEl = $('#main-nav');
 
