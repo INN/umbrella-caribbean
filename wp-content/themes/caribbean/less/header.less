@@ -32,10 +32,16 @@
         }
         &:nth-of-type(2) {
             order: 3;
-            .widgettitle,
-            .textwidget {
+            display: block;
+            .widgettitle {
                 max-width: 90%;
-                margin-left: 10%;
+            }
+            &.largo-follow {
+                margin-left: 2%;
+                a {
+                    border: 0;
+                    margin-bottom: 10px!important;
+                }
             }
         }
         .widgettitle {
