@@ -20,3 +20,50 @@ Version:        1.0
     height: 45px;
     width: 45px;
 }
+
+// header styles
+@import "header.less";
+
+// various widget styles
+@import "widgets.less";
+
+.social-icons {
+    margin: 0;
+    &.circled-icons {
+        li {
+            span {
+                color: @teal;
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                border: 1px solid @teal;
+                text-align: center;
+                line-height: 34px;
+                vertical-align: middle;
+                &:hover {
+                    border: 1px solid @blue;
+                    color: @blue;
+                }
+            }
+        }
+    }
+    li {
+        display: inline-block;
+        margin-bottom: 0;
+        margin-right: 10px;
+        a {
+            border: none!important;
+            color: @teal;
+            &:hover {
+                text-decoration: none;
+                color: @blue;
+            }
+            span {
+                color: @teal;
+                &:hover {
+                    color: @blue;
+                }
+            }
+        }
+    }
+}
