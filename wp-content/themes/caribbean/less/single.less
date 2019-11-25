@@ -1,0 +1,32 @@
+.single {
+    .entry-title {
+        color: @black;
+        font-family: @font-body-display;
+        font-size: 72px;
+        line-height: 5rem;
+        text-align: center;
+    }
+    .byline {
+        text-align: center;
+        .sep,
+        .entry-date {
+            display: none;
+        }
+        .by-author {
+            font-size: 18px;
+            line-height: 1.8rem;
+            .by {
+                font-family: @font-body;
+                font-style: italic;
+                color: @grey;
+            }
+            .author {
+                a {
+                    font-family: @font-header;
+                    color: @orange;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}

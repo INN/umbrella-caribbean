@@ -1,6 +1,19 @@
 // largo follow widget styles
 .largo-follow {
     margin: 0;
+    &.post-social {
+        text-align: center;
+        span {
+            background: transparent;
+            &:hover {
+                background: transparent;
+            }
+            a {
+                font-size: initial;
+                padding: 0;
+            }
+        }
+    }
     a {
         display: inline-block;
         color: transparent;
@@ -23,6 +36,9 @@
                 border: 1px solid @blue;
                 color: @blue;
             }
+        }
+        .hidden-phone {
+            display: none;
         }
     }
 }
