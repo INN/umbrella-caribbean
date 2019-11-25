@@ -29,7 +29,7 @@ function caribbean_group_block_fact_box_styling_init() {
 	);
 
 	// reregister group block with styles
-	register_block_type( 'citylimits/group-block', array(
+	register_block_type( 'caribbean/group-block', array(
 		'editor_style'  => 'caribbean-group-block-fact-box-editor',
 		'style'         => 'caribbean-group-block-fact-box',
 	) );
