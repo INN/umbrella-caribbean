@@ -29,7 +29,6 @@
     this.toggleTouchClass();
 
     // Stick navigation
-    this.stickyNavEl = $('.sticky-nav-holder');
     this.stickyNavWrapper = $('.sticky-nav-wrapper');
     this.mainEl = $('#main');
     this.mainNavEl = $('#main-nav');
@@ -150,7 +149,7 @@
     // This is used with some styles in less/inc/navbar-sticky.less
     $.each(Largo.sticky_nav_options, function(idx, opt) {
       if (opt)
-        self.stickyNavEl.addClass(idx);
+        self.mainNavEl.addClass(idx);
     });
 
     $(window).on('scroll resize', this.stickyNavScrollCallback.bind(this));
@@ -169,14 +168,14 @@
         )
       )
     ) {
-      this.stickyNavEl.addClass('show');
-      this.stickyNavEl.parent().css('height', this.stickyNavEl.outerHeight());
+      this.mainNavEl.addClass('show');
+      this.mainNavEl.parent().css('height', this.mainNavEl.outerHeight());
     } else if (
       Largo.sticky_nav_options.sticky_nav_display
     ) {
-      this.stickyNavEl.parent().css('height', '');
+      this.mainNavEl.parent().css('height', '');
     } else {
-      this.stickyNavEl.parent().css('height', '');
+      this.mainNavEl.parent().css('height', '');
     }
     this.stickyNavTransitionDone();
   };
@@ -216,7 +215,7 @@
       if ( this.mainNavEl.length && this.mainNavEl.is(':visible') ) {
         // the main nav exists and is visible,
         // so we should hide the sticky nav
-        this.stickyNavEl.removeClass('show');
+        this.mainNavEl.removeClass('show');
         clearTimeout(this.scrollTimeout);
         return; // don't need to do the other logic; it shouldn't show anyways
       }
@@ -240,10 +239,10 @@
     clearTimeout(this.scrollTimeout);
 
     if (direction == 'up') {
-      callback = this.stickyNavEl.addClass.bind(this.stickyNavEl, 'show'),
+      callback = this.mainNavEl.addClass.bind(this.mainNavEl, 'show'),
       wait = 250;
     } else if (direction == 'down') {
-      callback = this.stickyNavEl.removeClass.bind(this.stickyNavEl, 'show');
+      callback = this.mainNavEl.removeClass.bind(this.mainNavEl, 'show');
       wait = 500;
     }
 
@@ -352,7 +351,7 @@
         navbar.toggleClass('open');
         $('html').addClass('nav-open');
         navbar.find('.nav-shelf').css({
-          top: self.stickyNavEl.position().top + self.stickyNavEl.outerHeight()
+          top: self.mainNavEl.position().top + self.mainNavEl.outerHeight()
         });
 
         if (!navbar.hasClass('open')) {
@@ -417,7 +416,7 @@
         isMobile = button.is(':visible');
 
     if (!isMobile) {
-      if (!this.stickyNavEl.hasClass('transitioning')) {
+      if (!this.mainNavEl.hasClass('transitioning')) {
         this.stickyNavTransition();
       }
 
@@ -495,8 +494,8 @@
   };
 
   Navigation.prototype.stickyNavTransition = function() {
-    if (!this.stickyNavEl.hasClass('transitioning')) {
-      this.stickyNavEl.addClass('transitioning');
+    if (!this.mainNavEl.hasClass('transitioning')) {
+      this.mainNavEl.addClass('transitioning');
     }
   };
 
@@ -507,8 +506,8 @@
       clearTimeout(this.stickyNavTransitionTimeout);
 
     this.stickyNavTransitionTimeout = setTimeout(function() {
-      if (self.stickyNavEl.hasClass('transitioning'))
-        self.stickyNavEl.removeClass('transitioning');
+      if (self.mainNavEl.hasClass('transitioning'))
+        self.mainNavEl.removeClass('transitioning');
     }, 500);
   };
 
