@@ -3,7 +3,7 @@
 // require the main Largo_Byline class so we can extend it
 require_once( get_template_directory().'/inc/byline_class.php' );
 
-// For Largo Custom Bylines
+// For custom bylines specific to the Caribbean child theme
 class Caribbean_Byline extends Largo_Byline {
 
 	function populate_variables( $args ) {
