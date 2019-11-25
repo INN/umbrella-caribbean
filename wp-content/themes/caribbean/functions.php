@@ -1,5 +1,5 @@
 <?php
-define( 'SHOW_STICKY_NAV', false );
+define( 'SHOW_GLOBAL_NAV', false );
 define( 'SHOW_CATEGORY_RELATED_TOPICS', false );
 
 /**
