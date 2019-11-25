@@ -1,1 +1,1 @@
-p.has-drop-cap:not(:focus)::first-letter{color:#1897BE;font-size:3.25em;line-height:1.33em;height:5em;border:1px solid #CDCDCD;text-align:center;padding:0 .2em;margin-right:.2em;display:block}
+.entry-content p{font-size:16px;line-height:1.8}p.has-drop-cap:not(:focus)::first-letter{color:#1897BE;font-size:3em;line-height:1;padding:.2em;box-sizing:border-box;height:5em;border:1px solid #CDCDCD;text-align:center;margin-right:.2em;display:block}
