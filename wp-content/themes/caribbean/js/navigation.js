@@ -395,16 +395,13 @@
    * @since Largo 0.5.1
    */
   Navigation.prototype.navOverflow = function() {
-    var nav = $('#sticky-nav');
+    var nav = this.mainNavEl;
 
-    if (!nav.is(':visible') || this.windowwidth() <= 768) {
+    if (!nav.is(':visible') ) <= 768) {
       this.revertOverflow();
       return;
     }
 
-    if ( ! this.windowwidth() <= 768 ) {
-      $('html').removeClass('nav-open');
-    }
 
     var shelf = nav.find('.nav-shelf'),
         button = nav.find('.toggle-nav-bar'),
