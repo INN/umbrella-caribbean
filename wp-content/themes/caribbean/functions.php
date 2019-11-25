@@ -19,6 +19,7 @@ function largo_child_require_files() {
     
 	$includes = array(
 		'/inc/enqueue.php',
+		'/inc/block-color-palette.php',
 		'/blocks/caribbean-group-block-fact-box.php',
     );
 
