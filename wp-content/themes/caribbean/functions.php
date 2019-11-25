@@ -18,7 +18,8 @@ define( 'SHOW_CATEGORY_RELATED_TOPICS', false );
 function largo_child_require_files() {
     
 	$includes = array(
-        '/inc/enqueue.php',
+		'/inc/enqueue.php',
+		'/blocks/caribbean-group-block-fact-box.php',
     );
 
 	require_once( ABSPATH . 'wp-admin/includes/plugin.php' );

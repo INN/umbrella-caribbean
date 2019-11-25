@@ -1,0 +1,41 @@
+.wp-block-group.is-style-fact-box {
+    border: 3px solid #D34400;
+    padding: 0 10%;
+    margin: 3.5rem 0;
+}
+.wp-block-group.is-style-fact-box h2 {
+    width: max-content;
+    background: #fff;
+    color: #000;
+    padding: .75rem 1rem;
+    margin: 0 auto;
+    margin-top: -4%;
+    font-family: urw-din-condensed, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    line-height: 26px;
+    text-transform: uppercase;
+}
+.wp-block-group.is-style-fact-box ul {
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    list-style: none;
+}
+.wp-block-group.is-style-fact-box ul li {
+    margin-bottom: 1.5rem;
+    color: #6B6A6A;
+    font-size: 16px;
+}
+.wp-block-group.is-style-fact-box ul li::before {
+    content: "\2022";
+    color: #00829A;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1.05em;
+}
+
+@media (max-width: 769px) {
+    .wp-block-group.is-style-fact-box h2 {
+        margin-top: -7%;
+    }
+}
