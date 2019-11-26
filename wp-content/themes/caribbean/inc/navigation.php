@@ -17,5 +17,6 @@ function caribbean_nav_enqueues() {
 		array( 'jquery' ),
 		filemtime( get_stylesheet_directory() . '/js/navigation.js' )
 	);
+	wp_enqueue_script( 'caribbean-navigation' );
 }
 add_action( 'wp_enqueue_scripts', 'caribbean_nav_enqueues', 20 ); // largo is at 10
