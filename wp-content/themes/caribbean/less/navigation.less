@@ -7,6 +7,11 @@
 #main-nav.navbar {
 	.nav {
 		padding: 10px 0;
+		float: none;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		flex-wrap: nowrap;
 	}
 	text-transform: uppercase;
 	position: sticky;
@@ -53,15 +58,5 @@
 	}
 	.menu-label {
 		line-height: 1.6;
-	}
-}
-
-@media ( min-width: 769px ) {
-	.navbar .nav {
-		float: none;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-evenly;
-		flex-wrap: nowrap;
 	}
 }

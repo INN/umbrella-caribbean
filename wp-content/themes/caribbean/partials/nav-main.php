@@ -89,7 +89,7 @@
 
 			<?php 
 				/*
-				 * Before Main Nav Shelf
+				 * After Main Nav Shelf
 				 *
 				 * Use add_action( 'largo_after_main_nav_shelf', 'function_to_add');
 				 *
