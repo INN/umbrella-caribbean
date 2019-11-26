@@ -156,18 +156,6 @@
   };
 
   Navigation.prototype.stickyNavResizeCallback = function() {
-    if (
-      true
-    ) {
-      this.mainNavEl.addClass('show');
-      this.mainNavEl.css('height', this.mainNavEl.outerHeight());
-    } else if (
-      Largo.sticky_nav_options.sticky_nav_display
-    ) {
-      this.mainNavEl.css('height', '');
-    } else {
-      this.mainNavEl.css('height', '');
-    }
     this.stickyNavTransitionDone();
   };
 

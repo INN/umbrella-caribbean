@@ -30,6 +30,9 @@
 			?>
 
 			<div class="">
+				<h2 class="reveal-when-open">
+					<?php esc_html_e( 'Menu', 'caribbean' ); ?>
+				</h2>
 				<ul class="nav">
 					<?php
 						/*
@@ -82,6 +85,9 @@
 								<?php esc_html_e( 'Menu', 'caribbean' ); ?>
 							</div>
 						</a>
+						<button class="close reveal-when-open" aria-label="<?php esc_attr_e( 'Close', 'caribbean' ); ?>">
+							<span class="dashicons dashicons-no-alt"></span>
+						</button>
 					</li>
 				</ul>
 
