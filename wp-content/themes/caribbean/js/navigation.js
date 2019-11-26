@@ -410,16 +410,15 @@
 
       li.addClass('overflowed');
       li.data('shelfwidth', shelfWidth);
+      li.parent('nav').addClass('has-overflow');
     } else if ( nav.find('.overflowed').length) {
       /*
        * Put items back on the main sticky menu and empty out the overflow nav menu if necessary.
        */
-      var li = overflow.find('li.overflowed').first();
+      var li = nav.find('li.overflowed').first();
 
-      if (li.hasClass('overflowed')) {
-        if (li.data('shelfwidth') < shelfWidth) {
-          li.removeClass('overflowed');
-        }
+      if (li.data('shelfwidth') < shelfWidth) {
+        li.removeClass('overflowed');
       }
     }
 
