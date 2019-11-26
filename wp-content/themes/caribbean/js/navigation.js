@@ -35,9 +35,8 @@
     // the currently-open menu Element (not a jQuery object);
     this.openMenu = false;
 
-    if (this.windowwidth() > 768) {
-      this.stickyNavTransition();
-    }
+    // Initially hide the things that might be overflowing the nav
+    this.stickyNavTransition();
 
     // Bind events
     this.bindEvents();
@@ -158,14 +157,7 @@
 
   Navigation.prototype.stickyNavResizeCallback = function() {
     if (
-      this.windowwidth() <= 768
-      || (
-        Largo.sticky_nav_options.main_nav_hide_article
-        && (
-          $('body').hasClass('single')
-          || $('body').hasClass('page')
-        )
-      )
+      true
     ) {
       this.mainNavEl.addClass('show');
       this.mainNavEl.parent().css('height', this.mainNavEl.outerHeight());
@@ -287,7 +279,7 @@
         return false;
       }
 
-      if ($(this).closest('.dropdown').hasClass('open')) {
+      if ( $(this).closest('.dropdown').hasClass('open') ) {
       } else {
         // If it is a touch event, get rid of the click events.
         if (event.type == 'touchstart') {
