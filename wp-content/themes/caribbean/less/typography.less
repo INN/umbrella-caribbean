@@ -1,7 +1,63 @@
 body {
-    font-family: @font-body;
-    color: @grey;
-    p {
-        line-height: 1.8rem;
+	font-family: @font-body;
+	color: @grey;
+	p {
+		font-size: 16px;
+		line-height: 1.8rem;
     }
+    ul {
+        margin-top: 1.5rem;
+        margin-bottom: 2.5rem;
+        list-style: none;
+        li {
+            margin-bottom: 1.5rem;
+            color: @grey;
+            font-size: 16px;
+            line-height: 1.8rem;
+            &:before {
+                content: "\2022";
+                color: #00829A;
+                font-weight: bold;
+                display: inline-block; 
+                width: 1em;
+                margin-left: -1.05em;
+            }
+        }
+    }
+    ol {
+        margin-top: 1.5rem;
+        margin-bottom: 2.5rem;
+        list-style: none;
+        counter-reset: li;
+        li {
+            margin-bottom: 1.5rem;
+            color: @grey;
+            font-size: 16px;
+            line-height: 1.8rem;
+            counter-increment: li;
+            &:before {
+                content: counter(li);
+                color: #00829A;
+                font-weight: bold;
+                display: inline-block; 
+                width: 1em;
+                margin-left: -1.05em;
+                margin-right: 0.5em;
+            }
+        }
+    }
+}
+p.has-drop-cap:not(:focus)::first-letter {
+	// these are calculated to have font size of 60px, line height 80px, at paragraph font size 16px line height 1.8rem;
+	color: @blue;
+	font-size: 3.0em;
+	line-height: 1; // different browsers calculate this differently
+	padding: 0.2em; // so we replace the line height with padding based on the font size
+
+	box-sizing: border-box;
+	height: 5em;
+	border: 1px solid @grey3;
+	text-align: center;
+	margin-right: 0.2em;
+	display: block;
 }
