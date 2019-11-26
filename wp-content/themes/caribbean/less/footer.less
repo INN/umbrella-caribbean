@@ -16,14 +16,32 @@
             color: @black;
             text-transform: inherit;
         }
+        p {
+            font-size: 16px;
+        }
+        .widget_media_image {
+            text-align: center;
+            img {
+                max-width: 15%!important;
+            }
+        }
         .footer-credit-padding-inn-logo-missing {
             margin-top: 0;
         }
         #menu-footer-navigation {
-            text-align: center;
+            list-style: none;
             li {
+                &:before {
+                    content: "\2022";
+                    color: @teal;
+                    font-weight: bold;
+                    display: inline-block; 
+                    width: 1em;
+                    margin-left: 0em;
+                }
                 a {
                     font-size: 16px;
+                    color: @grey;
                 }
             }
         }
