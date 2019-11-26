@@ -24,6 +24,9 @@ Version:        1.0
 // header styles
 @import "header.less";
 
+// footer styles
+@import "footer.less";
+
 // various widget styles
 @import "widgets.less";
 
@@ -65,5 +68,19 @@ Version:        1.0
                 }
             }
         }
+    }
+}
+
+.btn {
+    border-radius: 0;
+    border: 0;
+    background: @teal;
+    color: @white;
+    font-family: @font-header;
+    text-transform: uppercase;
+    .inner-outline;
+    &:hover {
+        background: @blue;
+        color: @white;
     }
 }
