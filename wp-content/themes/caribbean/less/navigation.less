@@ -12,9 +12,12 @@
 		flex-direction: row;
 		justify-content: space-evenly;
 		flex-wrap: nowrap;
-		&.has-overflow .toggle-nav-bar {
-			display: block;
-		}
+	}
+
+	// the menu is wider than the page will permit
+	&.has-overflow .toggle-nav-bar,
+	&.has-overflow .btn-navbar {
+		display: block;
 	}
 	text-transform: uppercase;
 	position: sticky;
