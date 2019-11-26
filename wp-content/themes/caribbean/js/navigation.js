@@ -394,7 +394,8 @@
         navWidth += $(this).outerWidth();
     });
 
-    if (navWidth > shelfWidth - caretWidth) {
+
+    if ( navWidth > shelfWidth - caretWidth ) {
       var li = this.mainNavEl.find('ul.nav > li.menu-item:not(.overflowed)').last();
 
       li.addClass('overflowed');
@@ -423,11 +424,11 @@
      * If the nav is still wrapping, call navOverflow again.
      */
     var navWidth = 0;
-    nav.find('ul.nav > li').each(function() {
+    this.mainNavEl.find('ul.nav > li').each(function() {
       if ($(this).is(':visible'))
         navWidth += $(this).outerWidth();
     });
-    shelfWidth = nav.outerWidth();
+    shelfWidth = this.mainNavEl.outerWidth();
 
     if (navWidth > shelfWidth - caretWidth) {
       if (typeof this.navOverflowTimeout !== 'undefined')
