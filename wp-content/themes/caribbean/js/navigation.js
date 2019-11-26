@@ -160,13 +160,13 @@
       true
     ) {
       this.mainNavEl.addClass('show');
-      this.mainNavEl.parent().css('height', this.mainNavEl.outerHeight());
+      this.mainNavEl.css('height', this.mainNavEl.outerHeight());
     } else if (
       Largo.sticky_nav_options.sticky_nav_display
     ) {
-      this.mainNavEl.parent().css('height', '');
+      this.mainNavEl.css('height', '');
     } else {
-      this.mainNavEl.parent().css('height', '');
+      this.mainNavEl.css('height', '');
     }
     this.stickyNavTransitionDone();
   };
@@ -387,10 +387,11 @@
    * @since Largo 0.5.1
    */
   Navigation.prototype.navOverflow = function() {
+    console.log( 'navOverflow' );
     var nav = this.mainNavEl,
         button = nav.find('.toggle-nav-bar'),
         shelfWidth = nav.outerWidth(),
-        caretWidth = nav.find('.caret').first().outerWidth(),
+        caretWidth = nav.find('.caret').first().outerWidth();
 
     if (!this.mainNavEl.hasClass('transitioning')) {
       this.stickyNavTransition();
@@ -432,7 +433,7 @@
       if ($(this).is(':visible'))
         navWidth += $(this).outerWidth();
     });
-    shelfWidth = nav.outerWidth(),
+    shelfWidth = nav.outerWidth();
 
     if (navWidth > shelfWidth - caretWidth) {
       if (typeof this.navOverflowTimeout !== 'undefined')
@@ -486,5 +487,6 @@
   $(document).ready(function() {
     // make this Navigation available to inspectors.
     window.Largo.navigation = new Navigation();
+    console.log( 'correctfile' );
   });
 })();
