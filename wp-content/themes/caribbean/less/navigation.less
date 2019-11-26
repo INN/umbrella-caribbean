@@ -61,6 +61,7 @@
 		bottom: 0;
 		display: block;
 		padding: 1em;
+		border: none;
 
 		.admin-bar & {
 			top: 32px;
@@ -71,26 +72,33 @@
 			}
 		}
 
+		.navbar-inner {
+			box-sizing: border-box;
+			border: 2px solid @red;
+			padding: 1.5em;
+		}
+
+
 		.nav {
 			display: block;
 			li {
 				float: none;
+				border-bottom: 1px solid @grey3;
+				&:first-of-type {
+					margin-top: 40px;
+					border-top: 1px solid @grey3;
+				}
 			}
 		}
 
-		.navbar-inner {
-			box-sizing: border-box;
-			border: 2px solid @red;
-			padding: 1em;
-		}
-
 		h2 {
-			margin: -2em auto 0;
+			margin: -2.25em auto 0;
 			background-color: @white;
 			color: @color-heading;
 			padding: 1rem;
 			z-index: 1;
 			font-size: 24px;
+			line-height: 1;
 			width: min-content;
 			text-align: center;
 			position: absolute;
@@ -118,8 +126,8 @@
 			}
 			position: absolute;
 			// outset to get outside the padding
-			top: -1em;
-			right: -1em;;
+			top: -1.5em;
+			right: -1.5em;
 			background-color: @red;
 			color: @white;
 		}
