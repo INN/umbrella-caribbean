@@ -35,8 +35,19 @@
                 &:hover {
                     background: @white;
                 }
+                ul {
+                    li {
+                        &:before {
+                            content: '';
+                        }
+                    }
+                }
                 i {
                     position: relative;
+                    color: @teal;
+                    &:hover {
+                        color: @blue;
+                    }
                 }
                 span {
                     margin: 10px 0;
