@@ -376,9 +376,9 @@
    */
   Navigation.prototype.navOverflow = function() {
     var nav = this.mainNavEl,
-        button = nav.find('.toggle-nav-bar'),
-        shelfWidth = nav.outerWidth(),
-        caretWidth = nav.find('.caret').first().outerWidth();
+        button = this.mainNavEl.find('.toggle-nav-bar'),
+        shelfWidth = this.mainNavEl.outerWidth(),
+        caretWidth = this.mainNavEl.find('.caret').first().outerWidth();
 
     if (!this.mainNavEl.hasClass('transitioning')) {
       this.stickyNavTransition();
@@ -388,29 +388,32 @@
      * Calculate the width of the nav
      */
     var navWidth = 0;
-    nav.find('ul.nav > li').each(function() {
+    this.mainNavEl.find('ul.nav > li').each(function() {
       if ($(this).is(':visible'))
         navWidth += $(this).outerWidth();
     });
 
     if (navWidth > shelfWidth - caretWidth) {
-      var li = nav.find('ul.nav > li.menu-item:not(.overflowed)').last();
+      var li = this.mainNavEl.find('ul.nav > li.menu-item:not(.overflowed)').last();
 
       li.addClass('overflowed');
       li.data('shelfwidth', shelfWidth);
-      nav.addClass('has-overflow');
-    } else if ( nav.find('.overflowed').length) {
+      this.mainNavEl.addClass('has-overflow');
+    } else if ( this.mainNavEl.find('.overflowed').length) {
       /*
        * Put items back on the main sticky menu and empty out the overflow nav menu if necessary.
        */
-      var li = nav.find('li.overflowed').first();
+      var li = this.mainNavEl.find('li.overflowed').first();
 
       if (li.data('shelfwidth') < shelfWidth) {
         li.removeClass('overflowed');
       }
-      if ( li.length == 0 ) {
-        nav.removeClass('has-overflow');
-      }
+    }
+
+    // recheck if there's overflowed items
+    var overflowed = this.mainNavEl.find('li.overflowed');
+    if ( overflowed.length == 0 || overflowed.length == undefined ) {
+      this.mainNavEl.removeClass('has-overflow');
     }
 
     /*
@@ -451,20 +454,6 @@
       if (self.mainNavEl.hasClass('transitioning'))
         self.mainNavEl.removeClass('transitioning');
     }, 500);
-  };
-
-  Navigation.prototype.revertOverflow = function() {
-    var nav = $('#sticky-nav'),
-        self = shelf = nav.find('.nav-shelf'),
-        overflow = shelf.find('ul.nav > li#menu-overflow.menu-item-has-children').last();
-
-    overflow.find('li.overflowed').each(function(idx, li) {
-      shelf.find('ul.nav > li.menu-item').last().after(li);
-    });
-
-    if (overflow.find('ul li').length == 0) {
-      overflow.remove();
-    }
   };
 
   if (typeof window.Navigation == 'undefined') {

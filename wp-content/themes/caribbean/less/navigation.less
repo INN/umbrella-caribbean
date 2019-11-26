@@ -32,8 +32,10 @@
 		justify-content: space-evenly;
 		flex-wrap: nowrap;
 	}
-	.has-overflow {
-		justify-content: space-between; // so the menu button ends up against the right side
+	&.has-overflow {
+		.nav {
+			justify-content: space-between; // so the menu button ends up against the right side
+		}
 	}
 
 	// the menu is wider than the page will permit
