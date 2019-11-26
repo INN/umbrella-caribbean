@@ -13,25 +13,28 @@
 		justify-content: space-evenly;
 		flex-wrap: nowrap;
 	}
+	@media ( max-width: 768px ) {
+		position: sticky;
+		top: 0;
+		.admin-bar & {
+			top: 32px;
+			@media ( max-width: 782px ) {
+				top: 46px;
+			}
+		}
+	}
+	z-index: 10; // makes background color work, also prevents z-conflict with widgets
 
 	// the menu is wider than the page will permit
 	&.has-overflow .toggle-nav-bar,
 	&.has-overflow .btn-navbar {
 		display: block;
 	}
+
 	text-transform: uppercase;
-	position: sticky;
-	top: 0;
-	z-index: 10; // makes background color work, also prevents z-conflict with widgets
 	background: @white;
 	border-top: 1px solid @grey3;
 	border-bottom: 4px solid @black;
-	.admin-bar & {
-		top: 32px;
-		@media ( max-width: 782px ) {
-			top: 46px;
-		}
-	}
 }
 #main-nav.transitioning {
 	// copying Largo styles
