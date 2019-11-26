@@ -396,10 +396,8 @@
    */
   Navigation.prototype.navOverflow = function() {
     var nav = this.mainNavEl,
-        navHeight = nav.outerHeight();
-        shelf = nav.find('.nav-shelf'),
         button = nav.find('.toggle-nav-bar'),
-        shelfWidth = shelf.outerWidth(),
+        shelfWidth = nav.outerWidth(),
         caretWidth = nav.find('.caret').first().outerWidth(),
 
     if (!this.mainNavEl.hasClass('transitioning')) {
@@ -410,47 +408,25 @@
      * Calculate the width of the nav
      */
     var navWidth = 0;
-    shelf.find('ul.nav > li').each(function() {
+    nav.find('ul.nav > li').each(function() {
       if ($(this).is(':visible'))
         navWidth += $(this).outerWidth();
     });
 
-    var overflow = shelf.find('ul.nav > li#menu-overflow.menu-item-has-children').last();
-
     if (navWidth > shelfWidth - caretWidth) {
-      /*
-       * If there is no "overflow" menu item, create one
-       *
-       * This is where you change the word from "More" to something else.
-       */
-      if (overflow.length == 0) {
-        var overflowmenu ='<li id="menu-overflow" class="menu-item-has-children dropdown">' +
-          '<a href="#" class="dropdown-toggle">' + Largo.sticky_nav_options.nav_overflow_label + '<b class="caret"></b></a>' +
-          '<ul id="sticky-nav-overflow" class="dropdown-menu"></ul></li>';
-        overflow = $(overflowmenu);
-        overflow.find('a').click(function() { return false; });
-        shelf.find('ul.nav > li.menu-item').last().after(overflow);
-      }
+      var li = nav.find('ul.nav > li.menu-item:not(.overflowed)').last();
 
-      var li = shelf.find('ul.nav > li.menu-item').last();
-
-      overflow.find('ul#sticky-nav-overflow').prepend(li);
       li.addClass('overflowed');
       li.data('shelfwidth', shelfWidth);
-    } else if (overflow.length) {
+    } else if ( nav.find('.overflowed').length) {
       /*
        * Put items back on the main sticky menu and empty out the overflow nav menu if necessary.
        */
-      var li = overflow.find('li').first();
+      var li = overflow.find('li.overflowed').first();
 
       if (li.hasClass('overflowed')) {
         if (li.data('shelfwidth') < shelfWidth) {
-          shelf.find('ul.nav > li.menu-item').last().after(li);
-
-          // Remove the "More" menu if there are no items in it.
-          if (overflow.find('ul li').length == 0) {
-            overflow.remove();
-          }
+          li.removeClass('overflowed');
         }
       }
     }
@@ -461,11 +437,11 @@
      * If the nav is still wrapping, call navOverflow again.
      */
     var navWidth = 0;
-    shelf.find('ul.nav > li').each(function() {
+    nav.find('ul.nav > li').each(function() {
       if ($(this).is(':visible'))
         navWidth += $(this).outerWidth();
     });
-    shelfWidth = shelf.outerWidth(),
+    shelfWidth = nav.outerWidth(),
 
     if (navWidth > shelfWidth - caretWidth) {
       if (typeof this.navOverflowTimeout !== 'undefined')
