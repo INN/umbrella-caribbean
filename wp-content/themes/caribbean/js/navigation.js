@@ -376,8 +376,8 @@
    * @since Largo 0.5.1
    */
   Navigation.prototype.navOverflow = function() {
-    var nav = this.mainNavEl,
-        button = this.mainNavEl.find('.toggle-nav-bar'),
+
+    var button = this.mainNavEl.find('.toggle-nav-bar'),
         shelfWidth = this.mainNavEl.outerWidth(),
         caretWidth = this.mainNavEl.find('.caret').first().outerWidth();
 
@@ -395,20 +395,22 @@
     });
 
 
-    if ( navWidth > shelfWidth - caretWidth ) {
-      var li = this.mainNavEl.find('ul.nav > li.menu-item:not(.overflowed)').last();
+    if ( !this.mainNavEl.hasClass('open') ) {
+      if ( navWidth > shelfWidth - caretWidth ) {
+        var li = this.mainNavEl.find('ul.nav > li.menu-item:not(.overflowed)').last();
 
-      li.addClass('overflowed');
-      li.data('shelfwidth', shelfWidth);
-      this.mainNavEl.addClass('has-overflow');
-    } else if ( this.mainNavEl.find('.overflowed').length) {
-      /*
-       * Put items back on the main sticky menu and empty out the overflow nav menu if necessary.
-       */
-      var li = this.mainNavEl.find('li.overflowed').first();
+        li.addClass('overflowed');
+        li.data('shelfwidth', shelfWidth);
+        this.mainNavEl.addClass('has-overflow');
+      } else if ( this.mainNavEl.find('.overflowed').length) {
+        /*
+         * Put items back on the main sticky menu and empty out the overflow nav menu if necessary.
+         */
+        var li = this.mainNavEl.find('li.overflowed').first();
 
-      if (li.data('shelfwidth') < shelfWidth) {
-        li.removeClass('overflowed');
+        if (li.data('shelfwidth') < shelfWidth) {
+          li.removeClass('overflowed');
+        }
       }
     }
 
