@@ -21,6 +21,8 @@ function largo_child_require_files() {
 		'/inc/enqueue.php',
 		'/inc/navigation.php',
 		'/inc/byline_class.php',
+		'/inc/block-color-palette.php',
+		'/blocks/caribbean-group-block-fact-box.php',
 	);
 
 	require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
