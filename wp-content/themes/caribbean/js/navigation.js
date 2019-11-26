@@ -336,6 +336,7 @@
         if (!navbar.hasClass('open')) {
           navbar.find('.nav-shelf li.open').removeClass('open');
           $('html').removeClass('nav-open');
+          self.navOverflow();
         }
 
         return false;
