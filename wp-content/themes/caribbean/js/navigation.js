@@ -395,95 +395,83 @@
    * @since Largo 0.5.1
    */
   Navigation.prototype.navOverflow = function() {
-    var nav = this.mainNavEl;
+    var nav = this.mainNavEl,
+        navHeight = nav.outerHeight();
+        shelf = nav.find('.nav-shelf'),
+        button = nav.find('.toggle-nav-bar'),
+        shelfWidth = shelf.outerWidth(),
+        caretWidth = nav.find('.caret').first().outerWidth(),
 
-    if (!nav.is(':visible') ) <= 768) {
-      this.revertOverflow();
-      return;
+    if (!this.mainNavEl.hasClass('transitioning')) {
+      this.stickyNavTransition();
     }
 
+    /*
+     * Calculate the width of the nav
+     */
+    var navWidth = 0;
+    shelf.find('ul.nav > li').each(function() {
+      if ($(this).is(':visible'))
+        navWidth += $(this).outerWidth();
+    });
 
-    var shelf = nav.find('.nav-shelf'),
-        button = nav.find('.toggle-nav-bar'),
-        right = nav.find('.nav-right'),
-        shelfWidth = shelf.outerWidth(),
-        rightWidth = right.outerWidth(),
-        caretWidth = nav.find('.caret').first().outerWidth(),
-        isMobile = button.is(':visible');
+    var overflow = shelf.find('ul.nav > li#menu-overflow.menu-item-has-children').last();
 
-    if (!isMobile) {
-      if (!this.mainNavEl.hasClass('transitioning')) {
-        this.stickyNavTransition();
+    if (navWidth > shelfWidth - caretWidth) {
+      /*
+       * If there is no "overflow" menu item, create one
+       *
+       * This is where you change the word from "More" to something else.
+       */
+      if (overflow.length == 0) {
+        var overflowmenu ='<li id="menu-overflow" class="menu-item-has-children dropdown">' +
+          '<a href="#" class="dropdown-toggle">' + Largo.sticky_nav_options.nav_overflow_label + '<b class="caret"></b></a>' +
+          '<ul id="sticky-nav-overflow" class="dropdown-menu"></ul></li>';
+        overflow = $(overflowmenu);
+        overflow.find('a').click(function() { return false; });
+        shelf.find('ul.nav > li.menu-item').last().after(overflow);
       }
 
+      var li = shelf.find('ul.nav > li.menu-item').last();
+
+      overflow.find('ul#sticky-nav-overflow').prepend(li);
+      li.addClass('overflowed');
+      li.data('shelfwidth', shelfWidth);
+    } else if (overflow.length) {
       /*
-       * Calculate the width of the nav
+       * Put items back on the main sticky menu and empty out the overflow nav menu if necessary.
        */
-      var navWidth = 0;
-      shelf.find('ul.nav > li').each(function() {
-        if ($(this).is(':visible'))
-          navWidth += $(this).outerWidth();
-      });
+      var li = overflow.find('li').first();
 
-      var overflow = shelf.find('ul.nav > li#menu-overflow.menu-item-has-children').last();
+      if (li.hasClass('overflowed')) {
+        if (li.data('shelfwidth') < shelfWidth) {
+          shelf.find('ul.nav > li.menu-item').last().after(li);
 
-      if (!isMobile && navWidth > shelfWidth - rightWidth - caretWidth) {
-        /*
-         * If there is no "overflow" menu item, create one
-         *
-         * This is where you change the word from "More" to something else.
-         */
-        if (overflow.length == 0) {
-          var overflowmenu ='<li id="menu-overflow" class="menu-item-has-children dropdown">' +
-            '<a href="#" class="dropdown-toggle">' + Largo.sticky_nav_options.nav_overflow_label + '<b class="caret"></b></a>' +
-            '<ul id="sticky-nav-overflow" class="dropdown-menu"></ul></li>';
-          overflow = $(overflowmenu);
-          overflow.find('a').click(function() { return false; });
-          shelf.find('ul.nav > li.menu-item').last().after(overflow);
-        }
-
-        var li = shelf.find('ul.nav > li.menu-item').last();
-
-        overflow.find('ul#sticky-nav-overflow').prepend(li);
-        li.addClass('overflowed');
-        li.data('shelfwidth', shelfWidth);
-      } else if (overflow.length) {
-        /*
-         * Put items back on the main sticky menu and empty out the overflow nav menu if necessary.
-         */
-        var li = overflow.find('li').first();
-
-        if (li.hasClass('overflowed')) {
-          if (li.data('shelfwidth') < shelfWidth) {
-            shelf.find('ul.nav > li.menu-item').last().after(li);
-
-            // Remove the "More" menu if there are no items in it.
-            if (overflow.find('ul li').length == 0) {
-              overflow.remove();
-            }
+          // Remove the "More" menu if there are no items in it.
+          if (overflow.find('ul li').length == 0) {
+            overflow.remove();
           }
         }
       }
+    }
 
-      /*
-       * Re-calculate the width of the nav after adding/removing overflow items.
-       *
-       * If the nav is still wrapping, call navOverflow again.
-       */
-      var navWidth = 0;
-      shelf.find('ul.nav > li').each(function() {
-        if ($(this).is(':visible'))
-          navWidth += $(this).outerWidth();
-      });
-      shelfWidth = shelf.outerWidth(),
-      rightWidth = right.outerWidth();
+    /*
+     * Re-calculate the width of the nav after adding/removing overflow items.
+     *
+     * If the nav is still wrapping, call navOverflow again.
+     */
+    var navWidth = 0;
+    shelf.find('ul.nav > li').each(function() {
+      if ($(this).is(':visible'))
+        navWidth += $(this).outerWidth();
+    });
+    shelfWidth = shelf.outerWidth(),
 
-      if (!isMobile && navWidth > shelfWidth - rightWidth - caretWidth) {
-        if (typeof this.navOverflowTimeout !== 'undefined')
-          clearTimeout(this.navOverflowTimeout);
-        this.navOverflowTimeout = setTimeout(this.navOverflow.bind(this), 0);
-        return;
-      }
+    if (navWidth > shelfWidth - caretWidth) {
+      if (typeof this.navOverflowTimeout !== 'undefined')
+        clearTimeout(this.navOverflowTimeout);
+      this.navOverflowTimeout = setTimeout(this.navOverflow.bind(this), 0);
+      return;
     }
 
     this.stickyNavTransitionDone();
@@ -521,8 +509,9 @@
     }
   };
 
-  if (typeof window.Navigation == 'undefined')
+  if (typeof window.Navigation == 'undefined') {
     window.Navigation = Navigation;
+  }
 
   /**
    * Initialize the Navigation
