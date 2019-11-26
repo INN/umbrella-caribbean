@@ -387,7 +387,6 @@
    * @since Largo 0.5.1
    */
   Navigation.prototype.navOverflow = function() {
-    console.log( 'navOverflow' );
     var nav = this.mainNavEl,
         button = nav.find('.toggle-nav-bar'),
         shelfWidth = nav.outerWidth(),
@@ -411,7 +410,7 @@
 
       li.addClass('overflowed');
       li.data('shelfwidth', shelfWidth);
-      li.parent('nav').addClass('has-overflow');
+      nav.addClass('has-overflow');
     } else if ( nav.find('.overflowed').length) {
       /*
        * Put items back on the main sticky menu and empty out the overflow nav menu if necessary.
@@ -420,6 +419,9 @@
 
       if (li.data('shelfwidth') < shelfWidth) {
         li.removeClass('overflowed');
+      }
+      if ( li.length == 0 ) {
+        nav.removeClass('has-overflow');
       }
     }
 
@@ -487,6 +489,5 @@
   $(document).ready(function() {
     // make this Navigation available to inspectors.
     window.Largo.navigation = new Navigation();
-    console.log( 'correctfile' );
   });
 })();
