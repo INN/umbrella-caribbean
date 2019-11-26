@@ -36,6 +36,12 @@
 		color: @blue;
 	}
 }
+.nav > li.overflowed {
+	display: none;
+	.open & {
+		display: block;
+	}
+}
 .toggle-nav-bar {
 	// normally hidden; shows when the js knows that there's an overflow
 	display: none;
