@@ -132,6 +132,13 @@
 			color: @white;
 		}
 	}
+
+	// prevent these list items from adopting the li styles from the body
+	ul li {
+		&::before {
+			display: none;
+		}
+	}
 }
 #main-nav.transitioning {
 	// copying Largo styles
