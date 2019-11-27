@@ -19,6 +19,7 @@ function largo_child_require_files() {
 
 	$includes = array(
 		'/inc/enqueue.php',
+		'/inc/decorations.php',
 		'/inc/navigation.php',
 		'/inc/byline_class.php',
 		'/inc/block-color-palette.php',
