@@ -25,7 +25,9 @@ function largo_child_require_files() {
 		'/inc/block-color-palette.php',
 		'/blocks/caribbean-group-block-fact-box.php',
 		'/blocks/caribbean-post-selector-block.php',
-    );
+		// homepage
+		'/homepages/layout.php',
+	);
 
 	foreach ( $includes as $include ) {
 		require_once( get_stylesheet_directory() . $include );
