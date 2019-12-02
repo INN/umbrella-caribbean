@@ -158,7 +158,7 @@ function (_Component) {
       console.log(this.state.posts);
 
       if (this.state.posts.length > 0) {
-        var loading = __('Choose a post to display.');
+        var loading = __('Select a post to display from the right-hand side block properties sidebar.');
 
         output = loading.replace('%d', this.state.posts.length);
         this.state.posts.forEach(function (post) {
