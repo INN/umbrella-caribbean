@@ -1,0 +1,96 @@
+.largo-recent-posts {
+    ul {
+        li {
+            .post-image-top-term-container {
+                position: relative;
+                margin-bottom: @measure;
+                h5.top-tag {
+                    position: absolute;
+                    bottom: 0;
+                    margin-bottom: 0;
+                    background: @white;
+                    padding: 10px 20px;
+                    span {
+                        a {
+                            color: @orange;
+                            font-family: @font-header;
+                            font-size: 14px;
+                            letter-spacing: 1.4px;
+                        }
+                    }
+                }
+                img {
+                    padding-bottom: 0;
+                    .inner-outline;
+                }
+            }
+            h5 {
+                margin-bottom: @measure;
+                a {
+                    font-family: @font-body-display;
+                    font-size: 32px;
+                    color: @black;
+                }
+            }
+            p {
+                margin-bottom: @measure;
+            }
+            .byline {
+                text-align: center;
+                .sep,
+                .entry-date {
+                    display: none;
+                }
+                .byline-avatar-wrapper {
+                    vertical-align: inherit;
+                    margin-right: 15px;
+                }
+                .by-author {
+                    font-size: 14px;
+                    line-height: 1.8rem;
+                    .by {
+                        font-family: @font-body;
+                        font-style: italic;
+                        color: @grey;
+                        letter-spacing: 0.7px;
+                        margin-right: 2px;
+                    }
+                    .author {
+                        a {
+                            font-family: @font-header;
+                            font-weight: 600;
+                            letter-spacing: 1.8px;
+                            color: @orange;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+            .bottom-lines {
+                background-image: url('/wp-content/themes/caribbean/img/byline-lines@2x.png');
+                height: 40px;
+                margin-top: @measure;
+                margin-bottom: @measure;
+            }
+            .post-social {
+                margin-top: 0;
+                margin-bottom: 0;
+                text-align: left;
+                .hidden-phone {
+                    display: none;
+                }
+                span {
+                    a {
+                        margin-right: 10px!important;
+                        i {
+                            padding: 8px 9px;
+                        }
+                    }
+                    &.more-social-links {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

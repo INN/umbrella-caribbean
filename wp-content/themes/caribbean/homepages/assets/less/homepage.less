@@ -1,0 +1,60 @@
+  
+@import (reference) "../../../less/variables.less";
+@import (reference) "../../../less/mixins.less";
+
+#widget-area {
+    display: flex;
+    .widget {
+        border-top: 3px solid @black;
+        margin-top: @measure;
+        .widgettitle {
+            width: max-content;
+            background: @white;
+            color: @black;
+            padding: .75rem 1rem;
+            margin: 0 auto;
+            margin-top: -4%;
+            font-family: @font-header;
+            font-size: 24px;
+            line-height: 26px;
+            text-transform: uppercase;
+        }
+    }
+    .widget-area-left {
+        display: inline-block;
+        width: 60%;
+        padding-right: 40px;
+        border-right: 1px solid @grey2;
+        .largo-recent-posts {
+            ul {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: @measure;
+            }
+        }
+    }
+    .widget-area-right {
+        display: inline-block;
+        width: 40%;
+        padding-left: 40px;
+    }
+    @media (max-width: 769px) {
+        flex-direction: column;
+        .widget-area-left,
+        .widget-area-right {
+            width: 100%;
+        }
+        .widget-area-left {
+            border-right: 0;
+            padding-right: 0;
+            .largo-recent-posts {
+                ul {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+            }
+        }
+        .widget-area-right {
+            padding-left: 0;
+        }
+    }
+}
