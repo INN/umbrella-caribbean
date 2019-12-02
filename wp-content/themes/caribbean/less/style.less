@@ -11,6 +11,7 @@ Version:        1.0
 @import "typography.less";
 @import "variables.less";
 @import "mixins.less";
+@import "navigation.less";
 
 .byline .avatar,
 .byline img {
@@ -28,12 +29,16 @@ Version:        1.0
 @import "footer.less";
 
 // various widget styles
+@import "block-table.less";
+@import "block-gravityform.less";
 @import "widgets.less";
+@import "widget-largo-author.less";
 
 .social-icons {
     margin: 0;
     &.circled-icons {
         li {
+            i,
             span {
                 color: @teal;
                 width: 34px;

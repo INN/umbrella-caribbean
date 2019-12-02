@@ -3,6 +3,10 @@
     padding: 0 10%;
     margin: 3.5rem 0;
 }
+[data-type="core/group"][data-align="left"] .wp-block-group.is-style-fact-box,
+[data-type="core/group"][data-align="right"] .wp-block-group.is-style-fact-box {
+    padding: 0 1em;
+}
 .wp-block-group.is-style-fact-box h2 {
     width: max-content;
     background: #fff;

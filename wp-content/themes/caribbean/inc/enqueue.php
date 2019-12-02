@@ -13,7 +13,7 @@ function caribbean_enqueue_styles(){
 		get_stylesheet_directory_uri() . '/css/child-style.css',
 		array( 'largo-stylesheet', 'typekit' ),
 		filemtime( get_stylesheet_directory() . '/css/child-style.css' )
-    );
-    wp_enqueue_style( 'dashicons' );
+	);
+	wp_enqueue_style( 'dashicons' );
 }
 add_action( 'wp_enqueue_scripts', 'caribbean_enqueue_styles' );
