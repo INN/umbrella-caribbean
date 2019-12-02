@@ -1,8 +1,5 @@
 <?php
 
-// modifications to the Group block to include:
-// - fact box block style
-// - fact box stylesheets
 function caribbean_post_selector_block_init() {
 	// Skip block registration if Gutenberg is not enabled/merged.
 	if ( ! function_exists( 'register_block_type' ) ) {
@@ -23,30 +20,20 @@ function caribbean_post_selector_block_init() {
 		filemtime( "$dir/$editor_js" )
 	);
 
-	// editor styles
-	// $editor_css = 'caribbean-group-block-fact-box/editor.css';
-	// wp_register_style(
-	// 	'caribbean-group-block-fact-box-editor',
-	// 	get_stylesheet_directory_uri() . "/blocks/$editor_css",
-	// 	array(),
-	// 	filemtime( "$dir/$editor_css" )
-	// );
-
-	// // frontend styles
-	// $style_css = 'caribbean-group-block-fact-box/style.css';
-	// wp_register_style(
-	// 	'caribbean-group-block-fact-box',
-	// 	get_stylesheet_directory_uri() . "/blocks/$style_css",
-	// 	array(),
-	// 	filemtime( "$dir/$style_css" )
-	// );
+	// frontend styles
+	$style_css = 'caribbean-post-selector-block/style.css';
+	wp_register_style(
+		'caribbean-post-selector-block',
+		get_stylesheet_directory_uri() . "/blocks/$style_css",
+		array(),
+		filemtime( "$dir/$style_css" )
+	);
 
 	// reregister group block with styles
 	register_block_type( 'caribbean/post-selector-block', array(
-		'editor_script' => 'caribbean-post-selector-block-editor-js',
+		'editor_script'   => 'caribbean-post-selector-block-editor-js',
 		'render_callback' => 'caribbean_post_selector_block_callback',
-        // 'editor_style'  => 'caribbean-group-block-fact-box-editor',
-		// 'style'         => 'caribbean-group-block-fact-box',
+		'style'           => 'caribbean-post-selector-block',
 	) );
 
 	register_block_style(
@@ -65,16 +52,20 @@ function caribbean_post_selector_block_callback( $attributes, $content ) {
 
 	if( ! is_admin() ){
 
-		$post_type = $post;
-		if( 'video' === $attributes['postType'] ){
-			$content = 'this is a video'.$content;
-		} else if( 'podcast' === $attributes['postType'] ){
-			$content = 'this is a podcast'.$content;
-		} else {
-			$content = 'this is a post'.$content;
-		}
+		$post_id = $attributes['selectedPost'];
+		$permalink = $attributes['link'];
+		$post_type = 'post';
 
+		if( 'podcast' === $attributes['postType'] ){
+			$content = $content.'<div class="podcast-listen"><a href="'.$permalink.'"><span class="dashicons dashicons-controls-play"></span> LISTEN</a></div>';
+		} else if( 'video' === $attributes['postType'] ){
+			$content = '<a href="'.get_permalink().'"><div class="video-overlay"><div class="play-circle"><span class="dashicons dashicons-controls-play"></span></div>'.get_the_post_thumbnail( $post_id, 'rect_thumb' ).'</div></a>'.$content;
+		} else {
+			$content = '<a href="'.get_permalink().'">'.get_the_post_thumbnail( $post_id, 'rect_thumb' ).'</a>'.$content;
+		}
+		
 		return $content;
+		
 	}
 
 }
