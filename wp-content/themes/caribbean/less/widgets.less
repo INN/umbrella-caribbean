@@ -1,6 +1,51 @@
 // largo follow widget styles
 .largo-follow {
     margin: 0;
+    &.post-social {
+        text-align: center;
+        margin-top: calc(@measure + 1rem);
+        margin-bottom: calc(@measure + 1rem);
+        span {
+            background: transparent;
+            &.popover {
+                background: @white;
+                &:hover {
+                    background: @white;
+                }
+                ul {
+                    li {
+                        &:before {
+                            content: '';
+                        }
+                    }
+                }
+                i {
+                    position: relative;
+                    color: @teal;
+                    &:hover {
+                        color: @blue;
+                    }
+                }
+                span {
+                    margin: 10px 0;
+                }
+            }
+            &:hover {
+                background: transparent;
+            }
+            a {
+                font-size: initial;
+                padding: 0;
+                margin: 0 20px 0 0!important;
+                i {
+                    padding: 10px 11px;
+                    &:before {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
     a {
         display: inline-block;
         color: transparent;
