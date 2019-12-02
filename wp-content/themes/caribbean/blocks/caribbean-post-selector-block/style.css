@@ -99,7 +99,7 @@
     }
 }
 @media (max-width: 768px) {
-    .wp-block-group.is-style-post-group .post {
+    .wp-block-group.is-style-post-group .wp-block-column {
         margin-bottom: 1.5rem;
     }
     .wp-block-group.is-style-post-group .wp-block-columns .video-overlay span.dashicons {
