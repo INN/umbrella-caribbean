@@ -1,0 +1,58 @@
+.article-bottom .largo-author {
+	.widgettitle {
+		font-family: @font-body-display;
+		color: @black;
+		font-size: 32px;
+		margin-bottom: 0.5em;
+		text-transform: none;
+	}
+	.photo {
+		padding: 0;
+		border: none;
+		float: left;
+		margin: 0 50px 1em 0;
+		@media ( max-width: 768px ) {
+			clear: both;
+			float: none;
+		}
+	}
+	.photo-wrapper {
+		.inner-circle();
+	}
+	img.avatar {
+		margin: 0;
+		border-radius: 50%;
+	}
+	ul li a {
+		padding: 0;
+		background-color: unset;
+		border-radius: unset;
+		margin-right: 10px;
+	}
+	ul li::before {
+		display: none;
+	}
+
+	ul li.author-posts-link a {
+		color: @teal;
+		font-family: @font-header;
+		font-size: 16px;
+		padding: 4px;
+		&:hover {
+			color: @blue;
+			text-decoration: underline;
+		}
+	}
+	.author-posts-link,
+	a i {
+		line-height: 34px;
+	}
+	a i {
+		display: inline-block;
+		width: 34px;
+		height: 34px;
+		&::before {
+			width: 1em;
+		}
+	}
+}

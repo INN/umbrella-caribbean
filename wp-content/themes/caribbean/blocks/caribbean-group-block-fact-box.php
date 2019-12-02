@@ -4,8 +4,10 @@
 // - fact box block style
 // - fact box stylesheets
 function caribbean_group_block_fact_box_styling_init() {
-	// Skip block registration if Gutenberg is not enabled/merged.
-	if ( ! function_exists( 'register_block_type' ) ) {
+	if (
+		! function_exists( 'register_block_type' ) // Skip block registration if Gutenberg is not enabled/merged.
+		|| ! function_exists( 'register_block_style' ) // not WP 5.3
+	) {
 		return;
 	}
 	$dir = get_stylesheet_directory() . '/blocks';
@@ -45,3 +47,16 @@ function caribbean_group_block_fact_box_styling_init() {
 	);
 }
 add_action( 'init', 'caribbean_group_block_fact_box_styling_init' );
+
+/**
+ * JS modifications to the Group block not doable with plain CSS and PHP
+ */
+function caribbean_group_block_modifications() {
+	wp_enqueue_script(
+		'caribbean-grou-block-mods',
+		get_stylesheet_directory_uri() . '/blocks/caribbean-group-block-fact-box/caribbean-group.js',
+		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
+		filemtime( get_stylesheet_directory() . '/blocks/caribbean-group-block-fact-box/caribbean-group.js' )
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'caribbean_group_block_modifications' );

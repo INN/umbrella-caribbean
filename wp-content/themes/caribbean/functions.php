@@ -19,16 +19,14 @@ function largo_child_require_files() {
 
 	$includes = array(
 		'/inc/enqueue.php',
+		'/inc/decorations.php',
 		'/inc/navigation.php',
 		'/inc/byline_class.php',
 		'/inc/block-color-palette.php',
 		'/blocks/caribbean-group-block-fact-box.php',
+		// homepage
+		'/homepages/layout.php',
 	);
-
-	require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-	if ( is_plugin_active( 'gravityforms/gravityforms.php' ) ) {
-		$includes[] = '/inc/gravityforms/events-calendar.php';
-	}
 
 	foreach ( $includes as $include ) {
 		require_once( get_stylesheet_directory() . $include );
