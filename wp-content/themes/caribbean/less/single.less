@@ -1,0 +1,46 @@
+.single {
+    .entry-title {
+        color: @black;
+        font-family: @font-body-display;
+        font-size: 72px;
+        line-height: 5rem;
+        text-align: center;
+    }
+    .byline {
+        text-align: center;
+        .sep,
+        .entry-date {
+            display: none;
+        }
+        .by-author {
+            font-size: 18px;
+            line-height: 1.8rem;
+            .by {
+                font-family: @font-body;
+                font-style: italic;
+                color: @grey;
+            }
+            .author {
+                a {
+                    font-family: @font-header;
+                    font-weight: 600;
+                    letter-spacing: 1.8px;
+                    color: @orange;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+    .largo-follow.post-social {
+        @media (max-width: 769px){
+            max-width: max-content;
+            margin: 0 auto;
+            span {
+                float: left;
+                &:nth-child(3n+1) {
+                    clear: left;
+                }
+            }
+        }
+    }
+}

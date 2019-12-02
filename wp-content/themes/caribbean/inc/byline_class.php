@@ -13,7 +13,6 @@ class Caribbean_Byline extends Largo_Byline {
 		$this->author_id = get_post_meta( $this->post_id, 'post_author', true );
 		$this->show_avatar = $args['show_avatar'];
 	}
-
 	/**
 	 * Modifies the default Largo_Byline avatar function to wrap
 	 * the avatar in a div so we can style the avatar with a specific inner outline

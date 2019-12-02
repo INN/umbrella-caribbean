@@ -56,6 +56,7 @@ function largo_byline( $echo = true, $exclude_date = false, $post = null, $show_
 			_doing_it_wrong( 'largo_byline', 'largo_byline must be called with a post or post ID specified as the third argument. For more information, see https://github.com/INN/largo/issues/1517 .', '0.6' );
 		}
 	}
+
 	// Set us up the options
 	// This is an array of things to allow us to easily add options in the future
 	$options = array(
