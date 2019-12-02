@@ -33,7 +33,7 @@ if ($thumb == 'small') {
 	<?php
 } elseif ($thumb == 'large') {
 	$img_attr = array();
-	$img_attr['class'] = " attachment-large";
+	$img_attr['class'] = " attachment-two-third-full";
     ?>
         <div class="post-image-top-term-container">
             <?php
@@ -42,7 +42,7 @@ if ($thumb == 'small') {
                     largo_maybe_top_term();
                 }
             ?>
-            <a href="<?php echo get_permalink(); ?>"><?php echo get_the_post_thumbnail( get_the_ID(), 'large', $img_attr); ?></a>
+            <a href="<?php echo get_permalink(); ?>"><?php echo get_the_post_thumbnail( get_the_ID(), 'two-third-full', $img_attr); ?></a>
         </div>
 	<?php
 }
