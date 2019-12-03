@@ -6,7 +6,7 @@
 
 	$featured_stories = largo_home_featured_stories( 3 );
 ?>
-<div id="widget-area" class="clearfix">
+<div class="widget-area clearfix">
     <div class="widget-area-left">
         <?php
             largo_render_template( 'partials/home', 'top', array( 'topstory' => $topstory ) );
@@ -18,7 +18,7 @@
         ?>
     </div>
 </div>
-<div id="widget-area" class="clearfix">
+<div class="widget-area clearfix">
     <div class="widget-area-left">
         <?php
             dynamic_sidebar( 'Homepage Left' );
