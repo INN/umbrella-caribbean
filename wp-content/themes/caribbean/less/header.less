@@ -1,7 +1,6 @@
 #site-header {
     display: flex;
     flex-direction: row;
-    align-items: center;
     a {
         &:first-of-type {
             flex: 1 1 0px;
@@ -22,8 +21,8 @@
         flex: 1 1 0px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         max-width: 30%;
+        margin-top: @measure;
         &:first-of-type {
             order: 1;
             .textwidget {
@@ -36,8 +35,14 @@
             .widgettitle {
                 max-width: 90%;
             }
-            &.largo-follow {
+            &.largo-follow,
+            &.widget_text {
                 margin-left: 2%;
+                li {
+                    &::before {
+                        display: none;
+                    }
+                }
                 a {
                     border: 0;
                     margin-bottom: 10px!important;
