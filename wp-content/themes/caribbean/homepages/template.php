@@ -18,6 +18,9 @@
         ?>
     </div>
 </div>
+
+<div class="bottom-lines"></div>
+
 <div class="widget-area clearfix">
     <div class="widget-area-left">
         <?php
