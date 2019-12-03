@@ -25,7 +25,20 @@
     #site-footer {
         border-top: 1px solid @grey2;
         color: @grey;
+        #supplementary {
+            display: flex;
+            .widget-area {
+                &:first-of-type {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+            @media (max-width: 768px) {
+                display: block;
+            }
+        }
         #boilerplate {
+            margin-top: @measure;
             a {
                 color: @grey;
             }
@@ -53,6 +66,8 @@
         #menu-footer-navigation {
             list-style: none;
             li {
+                font-size: 16px;
+                line-height: 1.8rem;
                 &:before {
                     content: "\2022";
                     color: @teal;
@@ -63,6 +78,8 @@
                 }
                 a {
                     font-size: 16px;
+                    font-family: @font-body;
+                    line-height: 1.8rem;
                     color: @grey;
                 }
             }

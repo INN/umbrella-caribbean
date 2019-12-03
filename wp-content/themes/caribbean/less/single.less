@@ -43,4 +43,59 @@
             }
         }
     }
+    .entry-content {
+        font-size: 17px;
+        p {
+            font-size: 17px;
+        }
+    }
+    .article-bottom {
+        padding-top: @measure;
+        margin: 0!important;
+        .widget {
+            border-top: 3px solid @black;
+            margin-top: @measure;
+            margin-left: 17.021276594%;
+            margin-right: 17.021276594%;
+            .widgettitle {
+                width: max-content;
+                background: @white;
+                color: @black;
+                padding: .75rem 1rem;
+                margin: 0 auto;
+                margin-top: -2.5%;
+                font-family: @font-header;
+                font-size: 24px;
+                line-height: 26px;
+                text-transform: uppercase;
+                @media (max-width: 768px) {
+                    margin-top: -4%;
+                }
+            }
+        }
+        .largo-recent-posts {
+            margin: 0;
+            ul {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: @measure;
+                @media (max-width: 768px) {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+                .post-social {
+                    max-width: 100%;
+                    span {
+                        float: none;
+                    }
+                }
+            }
+        }
+    }
+    ul.blocks-gallery-grid {
+        .blocks-gallery-item {
+            &::before {
+                display: none;
+            }
+        }
+    }
 }
