@@ -10,8 +10,8 @@
 		<a class="img" href="<?php echo esc_attr( get_permalink( $topstory ) ); ?>"><?php echo get_the_post_thumbnail( $topstory, 'large' ); ?></a>
 		<?php largo_maybe_top_term( array( 'post' => $topstory->ID ) ); ?>
 	</div>
+	<h2><a href="<?php the_permalink( $topstory ); ?>"><?php echo get_the_title( $topstory ); ?></a></h2>
 	<div class="inner">
-		<h2><a href="<?php the_permalink( $topstory ); ?>"><?php echo get_the_title( $topstory ); ?></a></h2>
 		<div class="excerpt">
 			<?php largo_excerpt( $topstory, 4 ); ?>
 		</div>
