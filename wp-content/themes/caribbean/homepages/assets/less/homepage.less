@@ -1,7 +1,19 @@
-  
 @import (reference) "../../../less/variables.less";
 @import (reference) "../../../less/mixins.less";
 
+#top-story {
+    h2 {
+        font-family: @font-body-display;
+        color: @black;
+        a {
+            color: @black;
+            &:hover {
+                color: @blue;
+                text-decoration: underline;
+            }
+        }
+    }
+}
 .widget-area {
     display: flex;
     .widget {
