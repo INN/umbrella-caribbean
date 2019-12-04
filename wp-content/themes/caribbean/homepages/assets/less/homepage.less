@@ -71,7 +71,7 @@
         padding-left: @localwidth + @localpadding;
         position: relative;
     }
-    .byline.has-one-coauthor {
+    .byline {
         position: absolute;
         top: 0;
         left: 0;
@@ -84,13 +84,13 @@
         border-right: 1px solid @grey3;
         text-align: center;
 
-        .byline-avatar-wrapper {
-            margin: 0 0 ( @localpadding / 2 );
-        }
         .by-author {
             display: block;
             clear: both;
-            margin: 0 0 @localpadding;
+            margin: 0;
+        }
+        .edit-link {
+            display: none;
         }
         .by {
             display: inline;
