@@ -38,6 +38,37 @@ Version:        1.0
     width: 30px;
 }
 
+.byline {
+    .sep,
+    .entry-date {
+        display: none;
+    }
+    .byline-avatar-wrapper {
+        vertical-align: inherit;
+        margin-right: 15px;
+    }
+    .by-author {
+        font-size: 14px;
+        line-height: 1.8rem;
+        .by {
+            font-family: @font-body;
+            font-style: italic;
+            color: @grey;
+            letter-spacing: 0.7px;
+            margin-right: 2px;
+        }
+        .author {
+            a {
+                font-family: @font-header;
+                font-weight: 600;
+                letter-spacing: 1.8px;
+                color: @orange;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
 .social-icons {
     margin: 0;
     &.circled-icons {
