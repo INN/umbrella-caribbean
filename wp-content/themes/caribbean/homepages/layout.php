@@ -31,8 +31,9 @@ class Caribbean extends Homepage {
 				),
 			),
 			'sidebars' => array(
-                'Homepage Left (The left area of the homepage)',
-                'Homepage Right (The right area of the homepage)',
+				'Homepage Top Right (The top right area of the homepage, next to the top story)',
+				'Homepage Left (The bottom left area of the homepage)',
+				'Homepage Right (The bottom right area of the homepage)',
 				'Homepage Featured (Next to the featured posts box on the homepage)',
 			),
 		);
