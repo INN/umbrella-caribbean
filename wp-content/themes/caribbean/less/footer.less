@@ -20,6 +20,98 @@
         border-right: 1em solid white;
     }
 }
+.before-footer-wrapper {
+    background: transparent;
+    padding: 0 2.5%;
+    .before-footer-top-border {
+        background-image: url('/wp-content/themes/caribbean/img/pre-footer-top@2x.png');
+        height: 80px;
+        width: 100%;
+        max-width: 1170px;
+        margin: 0 auto @measure + 2rem;
+        @media (max-width: 768px) {
+            width: 95%;
+            margin: 0 auto @measure;
+        }
+    }
+    #before-footer {
+        padding: 0;
+        display: flex;
+        margin-bottom: @measure + 2rem;
+        aside {
+            flex: 1 1;
+            // &.widget_media_image {
+            //     max-width: max-content;
+            // }
+            &:nth-of-type(1),
+            &:nth-of-type(3) {
+                max-width: 30%;
+            }
+            &:nth-of-type(2) {
+                padding: 0 @measure;
+            }
+            .widgettitle {
+                font-family: @font-body-display;
+                font-size: 56px;
+                line-height: 64px;
+                font-weight: 600;
+                text-transform: none;
+            }
+            &.gform_widget {
+                .gform_wrapper {
+                    border-left: 1px solid @grey2;
+                    padding-left: @measure;
+                }
+                .ginput_container {
+                    margin: 0 auto;
+                }
+                .gfield_label {
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    font-family: @font-header;
+                    font-weight: 600;
+                    letter-spacing: 1.6px;
+                }
+                input {
+                    width: 100%!important;
+                    &.gform_button {
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+        img {
+            .inner-outline;
+            padding: 0;
+        }
+        @media (max-width: 769px) {
+            flex-direction: column;
+            margin: 0 auto @measure;
+            aside {
+                width: 100%;
+                max-width: 100%!important;
+                &:nth-of-type(2) {
+                    .textwidget {
+                        display: none;
+                    }
+                    padding: 0;
+                }
+                &:nth-of-type(3) {
+                    .widgettitle {
+                        display: none;
+                    }
+                    .gform_wrapper {
+                        border-left: 0;
+                        padding-left: 0;
+                    }
+                }
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
 .footer-bg {
     background: @white;
     #site-footer {
