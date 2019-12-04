@@ -59,10 +59,16 @@ Version:        1.0
             }
         }
     }
+    &.icons-center {
+        text-align: center;
+    }
     li {
         display: inline-block;
         margin-bottom: 0;
         margin-right: 10px;
+        &::before {
+            display: none;
+        }
         a {
             border: none!important;
             color: @teal;
