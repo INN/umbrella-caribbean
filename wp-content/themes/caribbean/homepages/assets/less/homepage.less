@@ -130,6 +130,32 @@
         display: inline-block;
         width: 40%;
         padding-left: 40px;
+        .widget_text {
+            .our-journalists {
+                list-style: none;
+                li {
+                    &::before {
+                        display: none;
+                    }
+                    img {
+                        width: 60px;
+                        height: 60px;
+                        margin-right: @measure;
+                    }
+                    .journalist-name {
+                        color: @orange;
+                        font-size: 14px;
+                        letter-spacing: 1.4px;
+                        text-transform: uppercase;
+                        font-family: @font-header;
+                        font-weight: 600;
+                    }
+                    p {
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
     }
     @media (max-width: 769px) {
         flex-direction: column;
