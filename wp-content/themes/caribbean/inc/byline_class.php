@@ -10,7 +10,7 @@ class Caribbean_Byline extends Largo_Byline {
 		$this->post_id = $args['post_id'];
 		$this->exclude_date = $args['exclude_date'];
 		$this->custom = get_post_custom( $this->post_id );
-		$this->author_id = get_post_meta( $this->post_id, 'post_author', true );
+		$this->author_id = get_post_field( 'post_author', $this->post_id, true );
 		$this->show_avatar = $args['show_avatar'];
 	}
 	/**
