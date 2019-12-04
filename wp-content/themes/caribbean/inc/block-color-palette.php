@@ -25,7 +25,7 @@ function caribbean_block_colors() {
 		array(
 			'name' => __( 'Grey', 'caribbean' ),
 			'slug' => 'grey',
-			'color' => '#6B6A6A',
+			'color' => '#4A4A4A',
 		),
 		array(
 			'name' => __( 'Grey 2', 'caribbean' ),
