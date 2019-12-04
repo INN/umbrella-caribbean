@@ -113,7 +113,7 @@ function caribbean_custom_sidebars() {
 	) );
 
 }
-add_action( 'widgets_init', 'caribbean_header_sidebars' );
+add_action( 'widgets_init', 'caribbean_custom_sidebars' );
 
 /**
  * Add the header-right-sidebar after the largo header
