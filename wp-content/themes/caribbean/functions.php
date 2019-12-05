@@ -96,3 +96,33 @@ function largo_byline( $echo = true, $exclude_date = false, $post = null, $show_
 	}
 	return $byline;
 }
+
+/**
+ * Register custom sidebars for the child theme
+ */
+function caribbean_custom_sidebars() {
+
+	register_sidebar( array(
+		'name' 		=> 'Header Widget - Right ',
+		'description' 	=> 'An optional area to place widgets in the header to the right of the site logo.',
+		'id' 		=> 'header-right-sidebar',
+		'before_widget' => '<!-- Sidebar: header-right-sidebar --><aside id="%1$s" class="%2$s clearfix">',
+		'after_widget' 	=> "</aside>",
+		'before_title' 	=> '<h3 class="widgettitle">',
+		'after_title' 	=> '</h3>',
+	) );
+
+}
+add_action( 'widgets_init', 'caribbean_custom_sidebars' );
+
+/**
+ * Add the header-right-sidebar after the largo header
+ */
+function caribbean_after_header() {
+
+	echo '<div class="header-right-sidebar">';
+		dynamic_sidebar( 'header-right-sidebar' );
+	echo '</div>';
+
+}
+add_action( 'largo_header_after_largo_header', 'caribbean_after_header' );
