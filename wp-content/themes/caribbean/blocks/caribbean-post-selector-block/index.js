@@ -100,7 +100,7 @@ function (_Component) {
     value: function getOptions() {
       var _this2 = this;
 
-      return new wp.api.collections.Posts().fetch().then(function (posts) {
+      return new wp.api.collections.Posts().fetch( { data: { per_page: 100 } } ).then(function (posts) {
         if (posts && 0 !== _this2.state.selectedPost) {
           // If we have a selected Post, find that post and add it.
           var post = posts.find(function (item) {
