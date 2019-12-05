@@ -21,7 +21,8 @@ function largo_child_require_files() {
 		'/inc/enqueue.php',
 		'/inc/decorations.php',
 		'/inc/navigation.php',
-		'/inc/byline_class.php',
+		'/inc/class-caribbean-byline.php',
+		'/inc/class-caribbean-coauthors-byline.php',
 		'/inc/block-color-palette.php',
 		'/blocks/caribbean-group-block-fact-box.php',
 		'/blocks/caribbean-post-selector-block.php',
@@ -65,11 +66,10 @@ function largo_byline( $echo = true, $exclude_date = false, $post = null, $show_
 		'values' => get_post_custom( $post_id ),
 		'exclude_date' => $exclude_date,
 		'show_avatar' => $show_avatar,
-		
 	);
 	if ( function_exists( 'get_coauthors' ) ) {
 		// If Co-Authors Plus is enabled and there is not a custom byline
-		$byline = new Largo_CoAuthors_Byline( $options );
+		$byline = new Caribbean_CoAuthors_Byline( $options );
 	} else {
 		// no custom byline, no coauthors: let's do the default
 		$byline = new Caribbean_Byline( $options );
