@@ -1,0 +1,50 @@
+.author {
+    .rss-link {
+        display: none;
+    }
+    .author-box {
+        .fn {
+            color: @black;
+            font-family: @font-body-display;
+            font-size: 72px;
+            line-height: 5rem;
+        }
+        .photo {
+            max-width: max-content;
+            float: left;
+            margin-right: @measure;
+            .photo-wrapper {
+                .inner-circle();
+                img {
+                    border-radius: 50%;
+                    border: 0;
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+        }
+        .social-icons {
+            li {
+                a {
+                    padding: 0;
+                    background-color: unset;
+                    border-radius: unset;
+                    margin-right: 10px;
+                    i {
+                        display: inline-block;
+                        width: 34px;
+                        height: 34px;
+                        &::before {
+                            margin-left: 4px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .entry-content {
+        p {
+            font-size: 18px;
+        }
+    }
+}
