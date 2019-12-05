@@ -1,6 +1,9 @@
 @import (reference) "../../../less/variables.less";
 @import (reference) "../../../less/mixins.less";
 
+#main {
+    margin: @measure + 1rem 0;
+}
 #top-story {
     border-bottom: none;
 
@@ -27,13 +30,17 @@
         .entry-date {
             display: none;
         }
+        .author {
+            vertical-align: inherit;
+        }
         .byline-avatar-wrapper {
             vertical-align: inherit;
-            margin-right: 15px;
+            margin-right: 8px;
         }
         .by-author {
             font-size: 14px;
             line-height: 1.8rem;
+            vertical-align: inherit;
             .by {
                 font-family: @font-body;
                 font-style: italic;
@@ -80,13 +87,13 @@
         border-right: 1px solid @grey3;
         text-align: center;
 
-        .byline-avatar-wrapper {
-            margin: 0 0 ( @localpadding / 2 );
-        }
         .by-author {
             display: block;
             clear: both;
             margin: 0 0 @localpadding;
+        }
+        .edit-link {
+            display: none;
         }
         .by {
             display: inline;

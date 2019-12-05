@@ -1,7 +1,7 @@
 #site-header {
     display: flex;
     flex-direction: row;
-    a {
+    a:not(.social-btn) {
         &:first-of-type {
             flex: 1 1 0px;
             order: 2;
@@ -21,32 +21,12 @@
         flex: 1 1 0px;
         display: flex;
         flex-direction: column;
-        max-width: 30%;
+        max-width: 28%;
         margin-top: @measure;
         &:first-of-type {
             order: 1;
             .textwidget {
                 max-width: 90%;
-            }
-        }
-        &:nth-of-type(2) {
-            order: 3;
-            display: block;
-            .widgettitle {
-                max-width: 90%;
-            }
-            &.largo-follow,
-            &.widget_text {
-                margin-left: 2%;
-                li {
-                    &::before {
-                        display: none;
-                    }
-                }
-                a {
-                    border: 0;
-                    margin-bottom: 10px!important;
-                }
             }
         }
         .widgettitle {
@@ -59,6 +39,43 @@
         }
         @media (max-width: 999px) {
             max-width: 25%;
+        }
+        @media (max-width: 769px) {
+            display: none!important;
+        }
+    }
+    .header-right-sidebar {
+        order: 3;
+        display: block;
+        float: none;
+        flex: 1 1 0px;
+        display: flex;
+        flex-direction: column;
+        max-width: 28%;
+        margin-top: @measure;
+        margin-left: @measure + 1rem;
+        aside {
+            &:first-of-type {
+                order: 0;
+                margin-top: 0;
+            }
+            max-width: 100%;
+            &.largo-follow {
+                display: block;
+                li {
+                    &::before {
+                        display: none;
+                    }
+                }
+                a {
+                    width: max-content;
+                    border: 0;
+                    margin-bottom: 10px!important;
+                }
+            }
+        }
+        .widgettitle {
+            max-width: 90%;
         }
         @media (max-width: 769px) {
             display: none!important;
