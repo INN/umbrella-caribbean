@@ -1,6 +1,8 @@
 .largo-recent-posts {
     ul {
         li {
+            display: flex;
+            flex-direction: column;
             h5 {
                 margin-bottom: @measure;
                 a {
@@ -13,8 +15,9 @@
                 margin-bottom: @measure;
             }
             .byline {
-                text-align: center;
+                text-align: left;
                 vertical-align: middle;
+                flex-grow: 1;
                 .sep,
                 .entry-date {
                     display: none;
