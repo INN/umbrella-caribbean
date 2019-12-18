@@ -8,7 +8,6 @@
 <article id="top-story" <?php post_class( '', $topstory->ID ); ?> >
 	<div class="post-image-top-term-container">
 		<a class="img" href="<?php echo esc_attr( get_permalink( $topstory ) ); ?>"><?php echo get_the_post_thumbnail( $topstory, 'large' ); ?></a>
-		<?php largo_maybe_top_term( array( 'post' => $topstory->ID ) ); ?>
 	</div>
 	<h2><a href="<?php the_permalink( $topstory ); ?>"><?php echo get_the_title( $topstory ); ?></a></h2>
 	<div class="inner">
