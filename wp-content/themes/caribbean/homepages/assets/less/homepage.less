@@ -130,6 +130,19 @@
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 grid-gap: @measure;
+                li {
+                    &:first-of-type {
+                        grid-column: 1 e("/") -1;
+                        .post-image-top-term-container {
+                            a {
+                                width: 100%;
+                                img {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

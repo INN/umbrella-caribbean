@@ -80,8 +80,10 @@ if ( isset( $instance['show_byline'] ) && $instance['show_byline'] == true) {
 
 ?>
 
-<div class="bottom-lines"></div>
+<div class="widget-bottom">
+	<div class="bottom-lines"></div>
 
-<?php if ( ! of_get_option( 'single_social_icons' ) == false ) {
-    largo_post_social_links();
-} ?>
+	<?php if ( ! of_get_option( 'single_social_icons' ) == false ) {
+		largo_post_social_links();
+	} ?>
+</div>
