@@ -26,7 +26,7 @@
 .wp-block-group.is-style-fact-box ul li {
     margin-bottom: 1.5rem;
     color: #4A4A4A;
-    font-size: 18px;
+    font-size: 19px;
     line-height: 1.8rem;
 }
 .wp-block-group.is-style-fact-box ul li::before {
@@ -47,7 +47,7 @@
 .wp-block-group.is-style-fact-box ol li {
     margin-bottom: 1.5rem;
     color: @grey;
-    font-size: 18px;
+    font-size: 19px;
     line-height: 1.8rem;
     counter-increment: li;
 }
