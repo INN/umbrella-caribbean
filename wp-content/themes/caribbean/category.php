@@ -73,16 +73,20 @@ $queried_object = get_queried_object();
 			 */
 
 			$secondary_featured = array_slice( $featured_posts, 1 );
+			$secondary_featured_displayed = 0;
 			if ( count( $secondary_featured ) > 0 ) { ?>
 				<div class="secondary-featured-post">
 					<div class="row-fluid clearfix"><?php
 						foreach ( $secondary_featured as $idx => $featured_post ) {
+								$secondary_featured_displayed++;
+								if( $secondary_featured_displayed <= 2 ) {
 								$shown_ids[] = $featured_post->ID;
 								largo_render_template(
 									'partials/archive',
-									'category-secondary-feature',
+									'category-primary-feature',
 									array( 'featured_post' => $featured_post )
 								);
+							}
 						} ?>
 					</div>
 				</div>
