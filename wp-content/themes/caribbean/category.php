@@ -31,7 +31,7 @@ $queried_object = get_queried_object();
 	</header>
 
 	<?php if ( $paged < 2 && of_get_option( 'hide_category_featured' ) == '0' ) {
-		$featured_posts = largo_get_featured_posts_in_category( $wp_query->query_vars['category_name'] );
+		$featured_posts = largo_get_featured_posts_in_category( $wp_query->query_vars['category_name'], 3 );
 		if ( count( $featured_posts ) > 0 ) {
 			$top_featured = $featured_posts[0];
 			$shown_ids[] = $top_featured->ID; ?>
@@ -72,25 +72,20 @@ $queried_object = get_queried_object();
 			 *        to reflect your preferred number of featured posts.
 			 */
 
-			$secondary_featured = array_slice( $featured_posts, 1 );
-			$secondary_featured_displayed = 0;
-			if ( count( $secondary_featured ) > 0 ) { ?>
+			$secondary_featured = array_slice( $featured_posts, 1 ); ?>
 				<div class="secondary-featured-post">
 					<div class="row-fluid clearfix"><?php
 						foreach ( $secondary_featured as $idx => $featured_post ) {
-								$secondary_featured_displayed++;
-								if( $secondary_featured_displayed <= 2 ) {
 								$shown_ids[] = $featured_post->ID;
 								largo_render_template(
 									'partials/archive',
 									'category-primary-feature',
 									array( 'featured_post' => $featured_post )
 								);
-							}
 						} ?>
 					</div>
 				</div>
-		<?php }
+		<?php
 	}
 } ?>
 </div>
