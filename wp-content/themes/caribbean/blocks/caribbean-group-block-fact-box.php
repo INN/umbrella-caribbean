@@ -41,7 +41,7 @@ function caribbean_group_block_fact_box_styling_init() {
 		'core/group',
 		array(
 			'name'         => 'fact-box',
-			'label'        => __( 'Fact Box' ),
+			'label'        => __( 'Fact Box', 'caribbean' ),
 			'style_handle' => 'fact-box',
 		)
 	);

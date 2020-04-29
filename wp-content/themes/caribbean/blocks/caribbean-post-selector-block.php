@@ -40,7 +40,7 @@ function caribbean_post_selector_block_init() {
 		'core/group',
 		array(
 			'name'         => 'post-group',
-			'label'        => __( 'Post Group' ),
+			'label'        => __( 'Post Group', 'caribbean' ),
 			'style_handle' => 'post-group',
 		)
 	);
