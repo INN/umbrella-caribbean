@@ -130,6 +130,7 @@ add_action( 'largo_header_after_largo_header', 'caribbean_after_header' );
 /**
  * Reimplement largo_home_single_top() but with WPML compatibility.
  *
+ * @link https://wpml.org/forums/topic/get_posts-by-language-and-suppress_filters-false-issue/
  * @link https://github.com/INN/largo/blob/v0.6.4/homepages/homepage.php#L93
  */
 function caribbean_home_single_top() {
