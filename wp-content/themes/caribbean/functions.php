@@ -126,3 +126,65 @@ function caribbean_after_header() {
 
 }
 add_action( 'largo_header_after_largo_header', 'caribbean_after_header' );
+
+/**
+ * Reimplement largo_home_single_top() but with WPML compatibility.
+ *
+ * @link https://github.com/INN/largo/blob/v0.6.4/homepages/homepage.php#L93
+ */
+function caribbean_home_single_top() {
+	$big_story = null;
+
+	// Cache the terms
+	$homepage_feature_term = get_term_by( 'slug', 'homepage-featured', 'prominence' );
+	$top_story_term = get_term_by( 'slug', 'top-story', 'prominence' );
+
+	// Get the posts that are both in 'Homepage Featured' and 'Homepage Top Story'
+	$top_story_posts = get_posts(array(
+		'tax_query' => array(
+			'relation' => 'AND',
+			array(
+				'taxonomy' => 'prominence',
+				'field' => 'term_id',
+				'terms' => $top_story_term->term_id
+			),
+		),
+		'posts_per_page' => 1,
+		'suppress_filters' => false,
+	));
+
+	if ( !empty( $top_story_posts ) ) {
+		return $top_story_posts[0];
+	}
+
+	// Fallback: get the posts that are in "Homepage Featured" but not "Homepage Top Story"
+	$homepage_featured_posts = get_posts(array(
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'prominence',
+				'field' => 'term_id',
+				'terms' => $homepage_feature_term->term_id
+			)
+		),
+		'posts_per_page' => 1,
+		'suppress_filters' => false,
+	));
+
+	if ( !empty( $homepage_featured_posts ) ) {
+		return $homepage_featured_posts[0];
+	}
+
+	// Double fallback: Get the most recent post
+	$posts = get_posts( array(
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'posts_per_page' => 1,
+		'suppress_filters' => false,
+	) );
+
+	if ( !empty( $posts ) ) {
+		return $posts[0];
+	}
+
+	return null;
+}
