@@ -1,7 +1,7 @@
 <?php
 	global $shown_ids;
 
-	$topstory = largo_home_single_top();
+	$topstory = caribbean_home_single_top();
 	$shown_ids[] = $topstory->ID;
 
 	$featured_stories = largo_home_featured_stories( 3 );
