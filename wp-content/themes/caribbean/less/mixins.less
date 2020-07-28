@@ -29,6 +29,13 @@
 .btn-primary {
     background-color: @red;
 }
+.btn-orange {
+    background-color: @orange!important;
+    &:hover {
+        background-color: lighten(@orange, 10%)!important;
+        .inner-outline();
+    }
+}
 .bottom-lines {
     background-image: url('/wp-content/themes/caribbean/img/byline-lines@2x.png');
     height: 40px;
