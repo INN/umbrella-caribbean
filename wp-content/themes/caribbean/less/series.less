@@ -1,0 +1,55 @@
+.cftl-tax-landing-template {
+    #series-header {
+        .series-banner {
+            margin-bottom: @measure * 2;
+        }
+        .description {
+            margin: (@measure * 2) 0;
+            p {
+                text-align: center;
+                margin: @measure 0;
+            }
+        }
+    }
+    #series-main {
+        .widget {
+            margin-bottom: @measure * 2;
+            .widgettitle {
+                text-align: center;
+            }
+            p.morelink {
+                @media (min-width: 769px) {
+                    max-width: 20%;
+                    margin: 0 auto;
+                }
+            }
+            &:not(:last-of-type) {
+                &::after {
+                    content: ' ';
+                    background-image: url('/wp-content/themes/caribbean/img/byline-lines@2x.png');
+                    height: 40px;
+                    width: 100%;
+                    margin-top: @measure;
+                    margin-bottom: @measure;
+                }
+            }
+        }
+        .largo-recent-posts {
+            .widgettitle {
+                text-align: center;
+            }
+            ul {
+                @media (min-width: 769px) {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr) );
+                    grid-gap: @measure;
+                }
+                li {
+                    .widget-bottom {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
