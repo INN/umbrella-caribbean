@@ -41,6 +41,7 @@ $content_span = array( 'one-column' => 12, 'two-column' => 8, 'three-column' => 
 
 <?php if ( $opt['header_enabled'] ) : ?>
 	<section id="series-header" class="span12">
+		<h1 class="entry-title"><?php the_title(); ?></h1>
 		<?php
 		if ( $opt['show_series_byline'] )
 			echo '<h5 class="byline">' . largo_byline( false, false, get_the_ID() ) . '</h5>';
