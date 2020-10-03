@@ -14,6 +14,9 @@
 		<div class="excerpt">
 			<?php largo_excerpt( $topstory, 4 ); ?>
 		</div>
+		<div class="read-more-button">
+			<a href="<?php echo esc_attr( get_permalink() ); ?>"><?php _e( 'Click here to read more', 'caribbean' ); ?></a>
+		</div>
 		<span class="byline"><?php largo_byline( true, false, $topstory ); ?></span>
 		<?php if ( ! of_get_option( 'single_social_icons' ) == false ) {
 			largo_post_social_links();

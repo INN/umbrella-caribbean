@@ -93,6 +93,14 @@ if( $is_category ) {
 		<?php
 	}
 
+	printf('
+		<div class="read-more-button">
+			<a href="%1$s">%2$s</a>
+		</div>',
+		esc_attr( get_permalink() ),
+		__( 'Click here to read more', 'caribbean' )
+	);
+
 	echo '</div>';
 
 } else {
@@ -107,6 +115,15 @@ if( $is_category ) {
 		<?php
 	}
 
+	printf('
+		<div class="read-more-button">
+			<a href="%1$s">%2$s</a>
+		</div>
+		<br/>',
+		esc_attr( get_permalink() ),
+		__( 'Click here to read more', 'caribbean' )
+	);
+
 	// byline on posts
 	if ( isset( $instance['show_byline'] ) && $instance['show_byline'] == true) {
 		$hide_byline_date = ( ! empty( $instance['hide_byline_date'] ) ) ? $instance['hide_byline_date'] : true;
@@ -118,7 +135,6 @@ if( $is_category ) {
 }
 
 ?>
-
 <div class="widget-bottom">
 	<div class="bottom-lines"></div>
 
