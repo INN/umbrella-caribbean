@@ -104,6 +104,14 @@ if( $is_category ) {
 	echo '</div>';
 
 } else {
+
+	// byline on posts
+	if ( isset( $instance['show_byline'] ) && $instance['show_byline'] == true) {
+		$hide_byline_date = ( ! empty( $instance['hide_byline_date'] ) ) ? $instance['hide_byline_date'] : true;
+		?>
+			<span class="byline"><?php echo largo_byline( false, $hide_byline_date, get_the_ID() ); ?></span>
+		<?php
+	}
 	
 	// the excerpt
 	if ( $excerpt == 'num_sentences' ) {
@@ -123,14 +131,6 @@ if( $is_category ) {
 		esc_attr( get_permalink() ),
 		__( 'Click here to read more', 'caribbean' )
 	);
-
-	// byline on posts
-	if ( isset( $instance['show_byline'] ) && $instance['show_byline'] == true) {
-		$hide_byline_date = ( ! empty( $instance['hide_byline_date'] ) ) ? $instance['hide_byline_date'] : true;
-		?>
-			<span class="byline"><?php echo largo_byline( false, $hide_byline_date, get_the_ID() ); ?></span>
-		<?php
-	}
 
 }
 
