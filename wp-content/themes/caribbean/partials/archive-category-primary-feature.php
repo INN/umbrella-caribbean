@@ -14,6 +14,9 @@
 					title="<?php echo __( 'Permalink to', 'largo' ) . esc_attr(strip_tags($featured_post->post_title)); ?>"
 					rel="bookmark"><?php echo $featured_post->post_title; ?></a>
 			</h2>
+			<?php if ( $subtitle = get_post_meta( $featured_post->ID, 'subtitle', true ) ) : ?>
+				<h2 class="subtitle"><?php echo $subtitle ?></h2>
+			<?php endif; ?>
 
 			<h5 class="byline"><?php largo_byline( true, false, $featured_post ); ?></h5>
 		</header>

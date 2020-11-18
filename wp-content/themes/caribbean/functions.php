@@ -26,6 +26,7 @@ function largo_child_require_files() {
 		'/inc/block-color-palette.php',
 		'/blocks/caribbean-group-block-fact-box.php',
 		'/blocks/caribbean-post-selector-block.php',
+		'/inc/metaboxes.php',
 		// homepage
 		'/homepages/layout.php',
 	);

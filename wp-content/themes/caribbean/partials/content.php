@@ -70,6 +70,10 @@ if ( $featured ) {
 			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => __( 'Permalink to', 'largo' ) . ' ' ) )?>" rel="bookmark"><?php the_title(); ?></a>
 		</h2>
 
+		<?php if ( $subtitle = get_post_meta( $post->ID, 'subtitle', true ) ) : ?>
+			<h2 class="subtitle"><?php echo $subtitle ?></h2>
+		<?php endif; ?>
+
 		<?php
 			if ( $show_byline ) { ?>
 				<h5 class="byline"><?php largo_byline( true, false, get_the_ID() ); ?></h5>

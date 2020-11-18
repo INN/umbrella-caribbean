@@ -105,6 +105,10 @@ if( $is_category ) {
 
 } else {
 
+	if ( $subtitle = get_post_meta( $post->ID, 'subtitle', true ) ) :
+		echo '<h2 class="subtitle">'.$subtitle.'</h2>';
+	endif;
+
 	// byline on posts
 	if ( isset( $instance['show_byline'] ) && $instance['show_byline'] == true) {
 		$hide_byline_date = ( ! empty( $instance['hide_byline_date'] ) ) ? $instance['hide_byline_date'] : true;

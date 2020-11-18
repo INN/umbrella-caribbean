@@ -10,6 +10,9 @@
 		<a class="img" href="<?php echo esc_attr( get_permalink( $topstory ) ); ?>"><?php echo get_the_post_thumbnail( $topstory, 'large' ); ?></a>
 	</div>
 	<h2><a href="<?php the_permalink( $topstory ); ?>"><?php echo get_the_title( $topstory ); ?></a></h2>
+	<?php if ( $subtitle = get_post_meta( $topstory->ID, 'subtitle', true ) ) : ?>
+		<h2 class="subtitle"><?php echo $subtitle ?></h2>
+	<?php endif; ?>
 	<div class="inner">
 		<div class="excerpt">
 			<?php largo_excerpt( $topstory, 4 ); ?>
