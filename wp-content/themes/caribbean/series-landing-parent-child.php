@@ -121,6 +121,10 @@ if ( 'none' != $opt['footer_style'] ) : ?>
 				<aside id="sidebar-bottom">
 				<?php dynamic_sidebar( $post->post_name . "_footer" ); ?>
 				</aside>
+			<?php } else if ( 'widget' == $opt['footer_style'] && is_active_sidebar( largo_make_slug( $post->post_title ) . "_footer" ) ) { ?>
+				<aside id="sidebar-bottom">
+				<?php dynamic_sidebar( largo_make_slug( $post->post_title ) . "_footer" ); ?>
+				</aside>
 			<?php }
 		?>
 	</section>
