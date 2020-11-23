@@ -12,7 +12,7 @@
 
 		<h1 class="entry-title" itemprop="headline"><?php the_title(); ?></h1>
 		<?php if ( $subtitle = get_post_meta( $post->ID, 'subtitle', true ) ) : ?>
-			<h2 class="subtitle"><?php echo $subtitle ?></h2>
+			<h2 class="entry-subtitle subtitle"><?php echo $subtitle ?></h2>
 		<?php endif; ?>
 		<h5 class="byline"><?php largo_byline( true, false, get_the_ID(), false ); ?></h5>
 
