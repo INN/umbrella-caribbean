@@ -18,7 +18,7 @@
 			<?php largo_excerpt( $topstory, 4 ); ?>
 		</div>
 		<div class="read-more-button">
-			<a href="<?php echo esc_attr( get_permalink() ); ?>"><?php _e( 'Click here to read more', 'caribbean' ); ?></a>
+			<a href="<?php echo esc_attr( get_permalink( $topstory ) ); ?>"><?php _e( 'Click here to read more', 'caribbean' ); ?></a>
 		</div>
 		<br/>
 		<span class="byline"><?php largo_byline( true, false, $topstory ); ?></span>
