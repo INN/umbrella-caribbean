@@ -41,6 +41,7 @@ $content_span = array( 'one-column' => 12, 'two-column' => 8, 'three-column' => 
 
 <?php if ( $opt['header_enabled'] ) : ?>
 	<section id="series-header" class="span12">
+		<h1 class="entry-title"><?php the_title(); ?></h1>
 		<?php
 		if ( $opt['show_series_byline'] )
 			echo '<h5 class="byline">' . largo_byline( false, false, get_the_ID() ) . '</h5>';
@@ -119,6 +120,10 @@ if ( 'none' != $opt['footer_style'] ) : ?>
 			} else if ( 'widget' == $opt['footer_style'] && is_active_sidebar( $post->post_name . "_footer" ) ) { ?>
 				<aside id="sidebar-bottom">
 				<?php dynamic_sidebar( $post->post_name . "_footer" ); ?>
+				</aside>
+			<?php } else if ( 'widget' == $opt['footer_style'] && is_active_sidebar( largo_make_slug( $post->post_title ) . "_footer" ) ) { ?>
+				<aside id="sidebar-bottom">
+				<?php dynamic_sidebar( largo_make_slug( $post->post_title ) . "_footer" ); ?>
 				</aside>
 			<?php }
 		?>

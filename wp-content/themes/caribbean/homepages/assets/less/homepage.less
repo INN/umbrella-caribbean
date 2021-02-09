@@ -10,12 +10,16 @@
     h2 {
         font-family: @font-body-display;
         color: @black;
+        font-size: 54px;
         a {
             color: @black;
             &:hover {
                 color: @blue;
                 text-decoration: underline;
             }
+        }
+        &.subtitle {
+            font-size: 36px!important;
         }
     }
     .excerpt {
@@ -152,6 +156,9 @@
                     }
                 }
             }
+            .morelink {
+                margin-bottom:80px!important;
+            }
         }
     }
     .widget-area-right {
@@ -202,6 +209,26 @@
         }
         .widget-area-right {
             padding-left: 0;
+        }
+    }
+}
+
+.home {
+    .largo-recent-posts {
+        ul {
+            li {
+                h2.subtitle {
+                    font-family: @font-body-display;
+                    font-size: 36px;
+                    font-weight: 100;
+                    color: @black;
+                }
+                h5 {
+                    a {
+                        font-size: 54px;
+                    }
+                }
+            }
         }
     }
 }

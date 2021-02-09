@@ -37,14 +37,44 @@
         .largo-recent-posts {
             .widgettitle {
                 text-align: center;
+                font-size: 30px;
+            }
+            ul {
+                // whacky way to figure out how many items are in the grid
+                // if 3+, add grid areas to each child
+                li:first-child:nth-last-child(n + 3),
+                li:first-child:nth-last-child(n + 3) ~ li {
+                    &:first-of-type {
+                        grid-area: a!important;
+                    }
+                    &:nth-child(even) {
+                        grid-area: b;
+                    }
+                    &:nth-child(odd) {
+                        grid-area: c;
+                    }
+                }
             }
             ul {
                 @media (min-width: 769px) {
                     display: grid;
                     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr) );
                     grid-gap: @measure;
+                        grid-template-areas: 
+                        "a a"
+                        "b c";
                 }
                 li {
+                    h5 {
+                        a {
+                            font-size: 36px;
+                        }
+                    }
+                    .post-image-top-term-container {
+                        img {
+                            width: 100%;
+                        }
+                    }
                     .widget-bottom {
                         display: none;
                     }
